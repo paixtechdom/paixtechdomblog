@@ -54,13 +54,13 @@ const ABlogPage = () => {
             case 'h2':
               return <h2 className="text-blue-600">{props.children}</h2>;
             case 'h3':
-              return <h3 classNamw="mt-5">{props.children}</h3>;
+              return <h3 className="mt-5">{props.children}</h3>;
             case 'h4':
-              return <h4 classNamw="mt-5">{props.children}</h4>;
+              return <h4 className="mt-5">{props.children}</h4>;
             case 'h5':
-              return <h5 classNamw="mt-5">{props.children}</h5>;
+              return <h5 className="mt-4">{props.children}</h5>;
             case 'h6':
-              return <h6 classNamw="mt-5">{props.children}</h6>;
+              return <h6 className="mt-3">{props.children}</h6>;
             case 'blockquote':
               return <blockquote className={styles.blockquote}>{props.children}</blockquote>;
             case 'code':

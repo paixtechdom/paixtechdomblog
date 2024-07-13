@@ -1,0 +1,103 @@
+.slideInNav{
+    /* top: -600%; */
+    transition: all 0.3s ease-in-out;
+    animation: slideInNav 0.5s ease-in-out;
+}
+.slideOutNav{
+    transition: all 0.3s ease-in-out;
+    animation: slideOutNav 0.5s ease-in-out;
+    
+}
+
+.animateHeroImg{
+    transition: all 0.3s ease-in-out;
+    animation: animateHeroImg 3s ease-in-out infinite;
+    scale: 0.9
+}
+.animateParallax{
+    animation: animateParallax 1.5s ease-in-out;
+}
+.showDesc{
+    transition: all 0.3s ease-in-out;
+    animation: showDesc 0.2s ease-in-out;
+    
+}
+.hideDesc{
+    transition: all 0.3s ease-in-out;
+    animation: hideDesc 0.2s ease-in-out;
+}
+.flip{
+    animation: flip 1s ease-in-out;
+}
+
+
+
+@keyframes flip {
+    from{
+        transform: rotateY(0deg);
+    }
+    to{        
+        transform: rotateY(360deg);
+    }
+}
+@keyframes showDesc {
+    from{
+        height: 0px
+    }
+    to{
+        
+        height: 100px
+    }
+}
+@keyframes hideDesc {
+    from{
+        height: 100px
+    }
+    to{
+        
+        height: 0px
+    }
+}
+
+@keyframes slideInNav {
+    from{
+        top: -600%
+    }
+    to{
+        
+        top: 100%
+    }
+}
+@keyframes slideOutNav {
+    from{
+        top: 100%
+    }
+    to{
+        
+        top: -600%
+    }
+}
+
+@keyframes animateHeroImg {
+    10%{
+        scale: 0.9;
+    }    
+    50%{
+        scale: 0.8;
+    }    
+    100%{
+        scale: 0.9;
+    }    
+}
+@keyframes animateParallax {
+    from{
+        top: 400px;
+        opacity: 0;
+        scale: 0.2;
+    }
+    to{
+        top: 0px;
+        opacity: 1;
+        scale: 1;
+    }
+}

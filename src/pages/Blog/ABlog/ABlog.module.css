@@ -1,0 +1,52 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  p, li {
+    /* padding-bottom: 1em; */
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    color: rgb(199, 195, 195);
+  }
+  li {
+    padding-bottom: 0.6em;
+    list-style-type: initial;
+    margin-left: 30px;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    padding: 20px 1px 5px 0;
+    font-weight: bold !important;
+  }
+  /* h3{
+    font-size: 25px !important;
+  }
+  h4{
+    font-size: 20px !important;
+  } */
+  
+
+  blockquote {
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    border-left: 4px solid #ccc;
+    background-color: #f9f9f9;
+  }
+  
+  pre {
+    margin: 1em 0;
+    padding: 1em;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    overflow-x: auto;
+  }
+  
+  img {
+    margin: 1em 0;
+  }
+  
+  a{
+    text-decoration: underline;
+  }

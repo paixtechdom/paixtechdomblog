@@ -1,38 +1,57 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
+import { format } from "date-fns"
 
-export interface BlogDataInterface {
-    title?: string,
-    desc?: string,
-    date: string,
-    id?: string,
-    img?: any,
-    content?: string[],
-    noComments?: number,
-    noLikes?: number,
-    section?: string
+  interface imageAsset {
+    url: string,
+    id: string
+  }
+  interface mainImageInterface{
+    alt: string, 
+    asset: imageAsset
+  }
+  interface slugInterface {
+    current: string,
+    _type: string
+  }
+  export interface BlogDataInterface{
+    body: any[],
+    mainImage: mainImageInterface,
+    name: string,
+    publishedAt: string,
+    slug: slugInterface,
+    title: string
   }
 
 const BlogCard:FC<BlogDataInterface | any> = ({blog}) => {
 
   return (
-    <Link to={`/${blog.id}`} className="card bg-base-100 w-fit shadow-xl relative">
-        <figure className='bg-secondary'>
+    <Link to={`/blog/${blog.slug.current}`} className="card w-full shadow-xl relative overflow-hidden p-0 bg-secondary">
+      <figure className="min-h-[20vh]">
            <img 
-            src={blog.img}
-            alt={blog.title}
-            className='w-full md:h-[30vh] md:object-cover'
+            src={blog?.mainImage?.asset.url}
+            alt={blog?.mainImage.alt}
+            className='w-full m-0 md:h-[30vh] md:object-cover'
+            loading="lazy"
            />
         </figure>
-        <div className="card-actions justify-start absolute top-5 left-5">
-            <div className="badge badge-secondary">New</div>
-            <div className="badge badge-outline">{blog.section}</div>
-        </div>
-        <div className="card-body bg-primary w-full gap-5">
-            <h2 className="card-title text-lg font-light">
-            {blog.title}
+
+        <div className="card-body w-full gap-1 pt-4">
+
+          <div className='flex flex-col'>
+            <h2 className="card-title text-lg capitalize font-bold mb- text-blue-600">
+            {blog?.title}
             </h2>
-            <div className="card-actions justify-end">
+            <p className="text-sm m-0 text-gray-500">
+              {blog.name && blog.name + `&middot;`}  {format(new Date(blog.publishedAt), "dd MMM yyy")}
+            </p>
+          </div>
+
+            {/* <p className='text-gray-300'>
+            {blog?.body[0].children[0].text.substring(0, 100)} ...
+            <strong>more</strong>
+            </p> */}
+            <div className="card-actions justify-end mt-4">
             <button className="btn btn-primary min-w-full bg-transparent border-blue-600 text-gray-200 btn-circle">Read now</button>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import logoLabelWhite from "./images/logoLabelWhite.png"
+import logoLabelWhite from "./img/logoLabelWhite.png"
 
 
 

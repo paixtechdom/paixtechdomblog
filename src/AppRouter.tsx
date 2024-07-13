@@ -1,47 +1,120 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import {Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import React, {Suspense, useEffect, useState } from 'react';
 
-// import { delayLoad } from "./assets/Functions"
 import { HelmetProvider  } from 'react-helmet-async';
 import Header from './assets/components/Header';
-import Footer from './assets/components/Footer';
 
-// const HomePage = lazy(() => delayLoad(import("./pages/home/page")))
 
-import { PageNotFound } from './pages/PageNotFound';
-import Home from './pages/Home/page';
-import ABlogPage from './pages/ABlog/page';
+import ABlogPage from './pages/Blog/ABlog/page';
+import Blog from './pages/Blog/page';
+
+const Home = React.lazy(() => import('./pages/Home/Home'))
+const About = React.lazy(() => import('./pages/About/About'))
+const Services = React.lazy(() => import('./pages/Services/Services'))
+const Portfolio = React.lazy(() => import('./pages/Portfolio/Portfolio'))
+const Quote = React.lazy(() => import('./pages/Quote/Quote'))
+const Contact = React.lazy(() => import('./pages/Contact/Contact'))
+const PageNotFound = React.lazy(() => import('./pages/PageNotFound'))
+
+import { Navbar } from './assets/components/Sections/Navbar';
+import { Footer } from './assets/components/Sections/Footer';
+import { IconButton } from './assets/components/Button';
+import { Alert } from './assets/components/Alert';
+
+
+import  "react-lazy-load-image-component/src/effects/opacity.css"
+import  "react-lazy-load-image-component/src/effects/blur.css"
+import { AppContext } from './App';
+import { Loader } from './pages/Components/Loader';
+import { HeroBg } from './assets/components/HeroBg';
 
 
 
 
 export const AppRouter = () => {  
+    const [ currentNav, setCurrentNav ] = useState(0)  
+    const [ showNavBar, setShowNavBar ] = useState(false)
+    const [ showALert, setShowAlert ] = useState(false)
+    const [ alertMessage, setAlertMessage ] = useState('')
+    const [ alertType, setAlertType ] = useState('')
+    const [ subject, setSubject ] = useState('')
+    const [ isScrollTopZero, setIsScrollTopZero ] = useState(true)
+    const [ scrolledDown, setScrolledDown ] = useState(false)
+    const  dbLocation = 'http://localhost:80/paixAPI'
+
+
+  document.addEventListener('scroll', () => {
+    if(document.documentElement.scrollTop > 500){
+        setScrolledDown(true)
+    }else{
+        setScrolledDown(false)
+    }
+})
+
+  useEffect(() =>{
+      document.addEventListener('scroll', handleScroll)
+  }, [])
+
+  const handleScroll = () =>{
+    if(document.documentElement.scrollTop > 200){
+      setIsScrollTopZero(false)
+    }else{
+      setIsScrollTopZero(true)
+    }
+  }
+
+
     return (
         <HelmetProvider>
-            <Router>
-                <Suspense fallback={<Loader />}>
-                    <Header />
-                    <Routes>
-                        <Route path="/" element={<Home />}/>
-                        <Route path="/:slug" element={<ABlogPage />}/>
+            <AppContext.Provider value={{currentNav, setCurrentNav, showALert, setShowAlert, alertMessage, setAlertMessage, setAlertType, subject, setSubject, showNavBar, setShowNavBar, isScrollTopZero, setIsScrollTopZero, dbLocation}}>
 
-                        <Route path="*" element={<PageNotFound />} />
-                    </Routes>
-                    <Footer />
-                </Suspense>
-            </Router>
+                <Router>
+                    <Suspense fallback={<Loader />}>
+                        <Header />
+                        <Navbar />
+                        <HeroBg />
+                        <ScrollToTop />
+                        <IconButton icon={'arrow-up'} className={`fixed bottom-[5%] z-50 scale-125  transition-all duration-1000 ${scrolledDown ? 'right-[5%]' : '-right-[50%]'}`} func={() => {
+                        scrollTo({
+                                top: 0,
+                                behavior: 'smooth'
+                            })
+                        }}/>
+                        {
+                            showALert ? 
+                            <Alert alertMessage={alertMessage} alertType={alertType} setShowAlert={setShowAlert}/> : ''
+                        }
+
+
+
+                        <Routes>
+                            <Route path="/" element={<Home />}/>
+                            <Route path="/about" element={<About />}/>
+                            <Route path="/services" element={<Services />}/>
+                            <Route path="/works" element={<Portfolio />}/>
+                            <Route path="/Quote" element={<Quote />}/>
+                            <Route path="/contact" element={<Contact />}/>
+                            <Route path="/blog" element={<Blog />}/>
+                            <Route path="/blog/:slug" element={<ABlogPage />}/>
+
+                            <Route path="*" element={<PageNotFound />} />
+                        </Routes>
+                        <Footer />
+                    </Suspense>
+                </Router>
+            </AppContext.Provider>
         </HelmetProvider>
     );
   };
 
 
 
-  const Loader = () => {
-    return(
-        <section className='h-screen w-full bg-white  center flex-col text-4xl  text-center gap-4 text-gray-900'>
-           
-           Hello world Loader 
-            <p className="text-sm">Seamless Travel, Planned for Your Next Journey</p>
-        </section>
-    )
-  }
+
+const ScrollToTop = () => {
+    const pathname = useLocation()
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [pathname])
+
+}
+    

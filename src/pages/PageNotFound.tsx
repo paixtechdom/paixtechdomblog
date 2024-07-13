@@ -1,14 +1,26 @@
 import { Link } from "react-router-dom"
+import { useEffect } from "react"
+import { Parallax } from "../assets/components/Parallax"
 
-export const PageNotFound = () => {
+const PageNotFound = () => {
+    useEffect(() => {
+      document.documentElement.scrollTop = 0 
+    }, [])
+
     return(
-        <div className='w-full bg-white flex flex-col items-center justify-center h-96'>
-        <div className="text-5xl">404</div>
-        <p className="text-xl">
-          Page not found 
-        </p>
+      <Parallax id={'dlknxlgdksa'}>
 
-        <Link className='mt-9 text-black underline bg-blue p-3 text-sm px-8 rounded-xl ' to='/'>Click to got to to home page</Link>
-      </div>
+          <div className='pt-[10vh] w-full flex flex-col items-center justify-center h-[70vh] text-gray-200'>
+          
+          <div className="text-9xl flex items-end">4<i className="bi bi-exclamation-circle-fill h-fit text-8xl mb-3 bg-red-700 center rounded-full"></i>4</div>
+          <p className="text-xl">
+            Page not found 
+          </p>
+
+          <Link className='mt-9 text-white border border-blue-900 bg-[rgba(0,0,35)] p-3 text-sm px-8 rounded-xl ' to='/'>Return to the Home Page <i className="bi bi-house-fill ml-2"></i></Link>
+        </div>
+      </Parallax>
     )
 }
+
+export default PageNotFound

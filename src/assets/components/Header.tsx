@@ -1,8 +1,6 @@
 import { BiMenu, BiSearch } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
-/* 
 
-*/
 
 const Header = () => {
   return (
@@ -11,9 +9,9 @@ const Header = () => {
         <div className="navbar w-11/12 lg:w-10/12 m-0">
           <div className="navbar-start">
             <div className="dropdown">
-              <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+              {/* <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                 <BiMenu />
-              </div>
+              </div> */}
               {/* <ul
                 tabIndex={0}
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[50] mt-3 w-52 p-2 shadow">
@@ -46,10 +44,15 @@ const Header = () => {
             </ul>
           </div> */}
 
-          <div className="navbar-end flex gap-4">
+          <div className="navbar-end flex gap-4" 
+          onClick={() => {
+            document.querySelector("#search")?.scrollIntoView({
+              behavior: "smooth"
+            })
+          }}>
             <div className="flex items-center input gap-3">
               <BiSearch className='text-xl'/>
-              <input type="text" className='' placeholder='Search Blogs'/>
+              <input type="text" className='' readOnly placeholder='Search Blogs'/>
             </div>
            </div>
     </div>

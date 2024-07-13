@@ -15,7 +15,9 @@ export default function Blog() {
   
   useEffect(() => {
     fetchBlogs()
-  }, [])
+ 
+    window.scrollTo(0,0)
+}, [])
 
   // useEffect(() => {
   //   const delay = setTimeout(() => {

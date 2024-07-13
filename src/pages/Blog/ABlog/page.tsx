@@ -1,5 +1,4 @@
 import Hero from '../../../assets/components/Hero'
-// import { BlogDataInterface } from '../../assets/components/BlogCard'
 import { useParams } from 'react-router-dom'
 import { Client } from '../../../lib/Client'
 import { useEffect, useState } from 'react'
@@ -11,6 +10,10 @@ const ABlogPage = () => {
     const {slug} = useParams()
     const [ blog, setBlog ] = useState<BlogDataInterface | any>({})
 
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
+    
     useEffect(() => {
       document.title = `Reading | ${blog?.title}`
     }, [blog])

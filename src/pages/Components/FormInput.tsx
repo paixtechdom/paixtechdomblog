@@ -1,4 +1,14 @@
-export const FormInput = ({label, icon, value, setValue, type}) => {
+import { FC } from "react"
+
+interface InputInterface{
+    label : string, 
+    icon: string, 
+    value: string,
+    setValue: any,
+    type: string
+}
+
+export const FormInput:FC<InputInterface> = ({label, icon, value, setValue, type}) => {
     return(
         <div className="flex flex-col w-full relative text-gray-100 text-sm z-0 gap-4">
         <label htmlFor="" className="bg-transparent px-4 flex items-center gap-3">

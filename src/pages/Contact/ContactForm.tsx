@@ -1,11 +1,11 @@
 import { useContext, useState } from "react"
-import { Parallax } from "../../Components/Parallax"
 import { AppContext } from "../../App"
 import { FormInput } from "../Components/FormInput"
 import axios from "axios"
+import { Parallax } from "../../assets/components/Parallax"
 
 export const ContactForm = () => {
-    const { setShowAlert, setAlertMessage, setAlertType, subject, setSubject } = useContext(AppContext)
+    const { setShowAlert, setAlertMessage, setAlertType, subject, setSubject } = useContext<any>(AppContext)
 
 
     const [ name, setName ] = useState('')
@@ -16,11 +16,11 @@ export const ContactForm = () => {
     const [ isLoading, setIsLoading ] = useState(false) 
 
 
-    const handleSubmit = async (e) =>{
+    const handleSubmit = async (e: any) =>{
         e.preventDefault()
         setIsLoading(true)
-        const newName = name.split(' ').join('')
-        const newMessage = message.split(' ').join('')
+        const newName :any = name.split(' ').join('')
+        const newMessage:any = message.split(' ').join('')
         if(newName.length < 5 || newName == 0){
             setNameError(true)
             setMessageError(false)
@@ -49,7 +49,7 @@ export const ContactForm = () => {
                 }
             };
             await axios.post("https://api.emailjs.com/api/v1.0/email/send", data)
-            .then((response) => {
+            .then(() => {
             setShowAlert(true)
             setAlertType('success')
             setIsLoading(false)
@@ -59,7 +59,7 @@ export const ContactForm = () => {
             setMessage('')
             setSubject('')
         })
-        .catch((error) =>{
+        .catch(() =>{
             setShowAlert(true)
             setIsLoading(false)
             setAlertType('error')
@@ -78,11 +78,13 @@ export const ContactForm = () => {
                 <h2 className="text-4xl text-blue-600">Send Us a message now</h2>
             </Parallax>
             <Parallax id={'formname'} className={'w-full'}>
+                <>
                 <FormInput label={'Name'} icon={'person-fill'} value={name} setValue={setName} type={'text'}/>
                 {
                     nameError ? 
                     <p className="text-red-600 p-2 px-4">Name is too short</p> : ''
                 }
+                </>
             </Parallax>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -99,6 +101,7 @@ export const ContactForm = () => {
 
 
             <Parallax id={'formmessage'} className={'w-full'}>
+                <>
                 <div className="flex flex-col w-full relative text-gray-100 text-sm z-0 gap-4">
                 <label htmlFor="" className="bg-transparent px-4 flex items-center gap-3">
                 <i className={`bi bi-chat-dots-fill `}></i> 
@@ -107,7 +110,7 @@ export const ContactForm = () => {
                 </label>
 
                 <div className="flex border border-blue-900 rounded-2xl shadow-lg center w-full overflow-hidden">
-                    <textarea type='text' placeholder="" className="bg-transparent bg-opacity-70 w-full p-3 pt-5 px-6 outline-none focus:initial" value={message} onChange={(e) => setMessage(e.target.value)} required></textarea>
+                    <textarea placeholder="" className="bg-transparent bg-opacity-70 w-full p-3 pt-5 px-6 outline-none focus:initial" value={message} onChange={(e) => setMessage(e.target.value)} required></textarea>
                     
                 </div>                
                 </div>
@@ -116,6 +119,7 @@ export const ContactForm = () => {
                     messageError ? 
                     <p className="text-red-600 p-2 px-4">Message is too short</p> : ''
                 }
+                </>
             </Parallax>
 
             <Parallax id={'formsubmit'} className={'w-full'}>

@@ -60,16 +60,18 @@ const Contact = () => {
                                 ))
                             }
                             <Parallax id={'contacticons'} className="flex gap-5">
-                                {
-                                    ContactInfo.map((contact:any, i:number) => (
-                                        !contact.title &&
-                                        <a key={i} target="_blank" href={contact.link} className="p-2 h-12 w-12 center relative">
-                                            <div className="border rounded-tl-3xl rounded-br-3xl border-blue-900 absolute top-0 right-0 rotate-[45deg] w-full h-full">
-                                            </div>
-                                            <i className={`bi bi-${contact.icon} text-xl `}></i>
-                                        </a>
-                                    ))
-                                }
+                                <>
+                                    {
+                                        ContactInfo.map((contact, i) => (
+                                            !contact.title &&
+                                            <a key={i} target="_blank" href={contact.link} className="p-2 h-12 w-12 center relative">
+                                                <div className="border rounded-tl-3xl rounded-br-3xl border-blue-900 absolute top-0 right-0 rotate-[45deg] w-full h-full">
+                                                </div>
+                                                <i className={`bi bi-${contact.icon} text-xl `}></i>
+                                            </a>
+                                        ))
+                                    }
+                                </>
                             </Parallax>
                         </div>
                         <ContactForm />

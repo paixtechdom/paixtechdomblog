@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { FC, useEffect, useState } from "react"
 
 export const Loader = () => {
     const [ loaderOpacity, setLoaderOpacity ] = useState(100)
@@ -64,7 +64,7 @@ const Ladder = () => {
                         ${lightUpStepsDown ? 'border-b' : ''}
                         `} style={{
                                 boxShadow: 'inset 0px 0px 10px 5px rgba(225,225,225,0.01)'
-                            }}></p>
+                            }}> <span className="hidden">{s}</span> </p>
                         ))
                     }
                 </div>
@@ -75,8 +75,12 @@ const Ladder = () => {
     )
 }
 
+interface PoleInterface{
+    condition: boolean, 
+    rotate: string
+}
 
-const LadderPole = ({condition, rotate}) => {
+const LadderPole:FC<PoleInterface> = ({condition, rotate}) => {
     return(
         <div className={`h-[170vh] w-5 bg-[rgba(0,0,24)] borde r border-blue-100  z-10 relatiive -translate-y-[5vh] ${rotate}`} 
         style={{

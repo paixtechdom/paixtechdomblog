@@ -1,8 +1,7 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React, {Suspense, useEffect, useState } from 'react';
 
 import { HelmetProvider  } from 'react-helmet-async';
-import Header from './assets/components/Header';
 
 
 import ABlogPage from './pages/Blog/ABlog/page';
@@ -73,7 +72,7 @@ export const AppRouter = () => {
                         <Header />
                         <Navbar />
                         <HeroBg />
-                        <ScrollToTop />
+                        
                         <IconButton icon={'arrow-up'} className={`fixed bottom-[5%] z-50 scale-125  transition-all duration-1000 ${scrolledDown ? 'right-[5%]' : '-right-[50%]'}`} func={() => {
                         scrollTo({
                                 top: 0,
@@ -108,13 +107,4 @@ export const AppRouter = () => {
   };
 
 
-
-
-const ScrollToTop = () => {
-    const pathname = useLocation()
-    useEffect(() => {
-        window.scrollTo(0,0)
-    }, [pathname])
-
-}
     

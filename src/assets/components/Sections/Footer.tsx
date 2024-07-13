@@ -20,6 +20,7 @@ export const Footer = () => {
             <div className="flex flex-col gap-3 w-full lg:w-6/12">
             <div className="flex items-start flex-col w-11/12 mb-[5vh] gap-4">
                 <Parallax id={'contacticons'} className="flex gap-5">
+                    <>
                     {
                         ContactInfo.map((contact, i) => (
                             !contact.title &&
@@ -30,6 +31,7 @@ export const Footer = () => {
                             </a>
                         ))
                     }
+                    </>
                 </Parallax>
                     {
                         ContactInfo.map((contact, i) => (

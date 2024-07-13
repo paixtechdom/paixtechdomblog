@@ -6,9 +6,9 @@ body {
   
   p, li {
     /* padding-bottom: 1em; */
-    font-size: 16px;
-    letter-spacing: 0.8px;
-    color: rgb(199, 195, 195);
+    /* font-size: 16px; */
+    /* letter-spacing: 0.8px; */
+    /* color: rgb(199, 195, 195); */
   }
   li {
     padding-bottom: 0.6em;
@@ -17,7 +17,7 @@ body {
   }
   
   h1, h2, h3, h4, h5, h6 {
-    padding: 20px 1px 5px 0;
+    /* padding: 20px 1px 5px 0; */
     font-weight: bold !important;
   }
   /* h3{

@@ -90,7 +90,7 @@ export default function Blog() {
           </section>
 
           <section id="search" className="lg:w-11/12 pt-[15vh] lg:pt-[5vh]">
-            <div className="lg:w-full mb-[20vh] flex items-center flex-col lg:flex-row gap-3 bg-secondary p-5 rounded-2xl md:px-8 justify-between min-h-[20vh]">
+            <div className="lg:w-full mb-[20vh] flex items-center flex-col lg:flex-row gap-3 bg-secondary p-5 rounded-2xl md:px-8 lg:justify-between min-h-[20vh]">
               <h2 className="font-bold text-2xl text-center lg:text-left">Explore our list of blogs tailored for you</h2>
               <div className="items-center input flex gap-4 w-full lg:w-fit">
 

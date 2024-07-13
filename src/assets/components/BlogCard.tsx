@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { format } from "date-fns"
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
   interface imageAsset {
     url: string,
@@ -28,11 +29,11 @@ const BlogCard:FC<BlogDataInterface | any> = ({blog}) => {
   return (
     <Link to={`/blog/${blog.slug.current}`} className="card w-full shadow-xl relative overflow-hidden p-0 bg-secondary">
       <figure className="min-h-[20vh]">
-           <img 
+           <LazyLoadImage 
             src={blog?.mainImage?.asset.url}
-            alt={blog?.mainImage.alt}
+            placeholderSrc={blog?.mainImage.alt}
             className='w-full m-0 md:h-[30vh] md:object-cover'
-            loading="lazy"
+            effect="blur"
            />
         </figure>
 

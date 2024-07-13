@@ -69,7 +69,6 @@ export const AppRouter = () => {
 
                 <Router>
                     <Suspense fallback={<Loader />}>
-                        <Header />
                         <Navbar />
                         <HeroBg />
                         

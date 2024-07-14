@@ -1,5 +1,5 @@
 import Hero from '../../../assets/components/Hero'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Client } from '../../../lib/Client'
 import { useContext, useEffect, useState } from 'react'
 import { BlogDataInterface } from '../../../assets/components/BlogCard'
@@ -55,9 +55,9 @@ const ABlogPage = () => {
             case 'h1':
               return <h1>{props.children}</h1>;
             case 'h2':
-              return <h2 className="text-blue-600 text-xl">{props.children}</h2>;
+              return <h2 className="text-blue-600 text-xl mt-[15vh]">{props.children}</h2>;
             case 'h3':
-              return <h3 className="mt-6 text-lg">{props.children}</h3>;
+              return <h3 className="mt-[15vh] mb-5 text-blue-600 text-3xl">{props.children}</h3>;
             case 'h4':
               return <h4 className="mt-5">{props.children}</h4>;
             case 'h5':
@@ -73,7 +73,7 @@ const ABlogPage = () => {
                 </pre>
               );
             default:
-              return <p className={styles.paragraph + " text-gray-300 mt-3"}>{props.children}</p>;
+              return <p className={styles.paragraph + " text-gray-300 mb-3 leading-relaxed tracking-wide"}>{props.children}</p>;
           }
         },
         // image: (props: any) => (
@@ -92,7 +92,7 @@ const ABlogPage = () => {
       list: (props: any) => {
         const { type } = props;
         const Tag = type === 'bullet' ? 'ul' : 'ol';
-        return <Tag className={styles.list}>{props.children}</Tag>;
+        return <Tag className={styles.list + " mt-2 mb-3 text-gray-300 leading-relaxed tracking-wide"}>{props.children}</Tag>;
       },
       listItem: (props: any) => <li className={styles.listItem}>{props.children}</li>,
       marks: {
@@ -115,11 +115,11 @@ const ABlogPage = () => {
     <main className="min-h-screen center flex-col bg-gradient-to-r from-secondary via-primary to-secondary pb-[10vh] relative">
     {
           blog?.title && 
-          <div className="w-full lg:w-10/12 xl:w-9/12  min-h-screen fleex items-center flex-col text-lg gap-[50px] ] pt-[5vh] lg:pt-[2ch]">
+          <div className="w-full lg:w-9/12 xl:w-8/12 ">
             <Hero blog={blog}/>
           </div>
         }
-      <div className="w-11/12 lg:w-10/12 xl:w-9/12  min-h-screen fleex items-center flex-col text-lg gap-[50px] ] pt-[5vh] lg:pt-[2ch]">
+      <div className="w-11/12 lg:w-9/12 xl:w-7/12  min-h-screen fleex items-center flex-col ">
         {
           blog?.title && 
           <>
@@ -132,7 +132,11 @@ const ABlogPage = () => {
             </>
           }
 
-        {/* <BlogCardList blogData={Blogs} /> */}
+        
+
+        <Link to="/blog" className="mt-12 btn border-blue-600">
+          Checkout more insightful blogs
+        </Link>
 
       </div>
 

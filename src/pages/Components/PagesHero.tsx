@@ -39,7 +39,7 @@ export const PagesHero:FC<PagesHeroInterface> = ({image, header, text, scrollTo,
 
                     
                 <div className="flex center w-fit ull lg:w-6/12 z-10 relative">
-                    <div className="absolute w-full h-full border-blue-900 border-2 rounded-3xl -bottom-[15px] -right-[15px] scale-90 bg-secondary animate-pulse">
+                    <div className="absolute w-full h-[90%] border-blue-900 border-2 rounded-3xl -bottom-[5px] -right-[15px] scale-90 bg-secondary animate-pulse">
 
                     </div>
                     <LazyLoadImage

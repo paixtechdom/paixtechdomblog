@@ -56,7 +56,7 @@ export const ImageAndText:FC<ImageTextInterface> = ({id, title, desc, img, class
                 <Parallax id={`shit${id}`} className={'w-fit lg:w-8/12 center relative'}>
                     <>
                         <div className={`absolute w-full min
-                        -h-[10vh] lg:min-h-[35vh] h-full border-blue-900 border-2 rounded-3xl ${className ? ' -left-[15px]' : ' -right-[15px]'}  scale-90 -bottom-[15px] bg-secondary animate-pulse`}>
+                        -h-[10vh] lg:min-h-[35vh] h-[90%] border-blue-900 border-2 rounded-3xl ${className ? ' -left-[15px]' : ' -right-[15px]'}  scale-90 -bottom-[5px] bg-secondary animate-pulse`}>
 
                         </div>
 

@@ -7,7 +7,7 @@ import { format } from "date-fns"
 
 const Hero:FC<BlogDataInterface | any> = ({blog}) => {
   return (
-    <section className="hero bg-transparent min-h-[ 70vh] center">
+    <section className="hero bg-transparent min-h-[80vh] center">
       <div className="hero-content flex-col lg:flex-row-reverse gap-[50px]">
         <img
           src={blog?.mainImage?.asset?.url}

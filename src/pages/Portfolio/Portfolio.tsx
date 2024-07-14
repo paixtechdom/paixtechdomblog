@@ -72,11 +72,17 @@ const Portfolio = () => {
                     <PagesHero 
                         image={img}
                         text={["Discover the projects we've worked on, showcasing our skills in digital marketing and software development. Each project reflects our dedication to providing effective and innovative solutions."]}
-                        header={'Discover our Works'}
+                        header={'Discover our works'}
                         scrollTo={"pro"}
                     />
                 </section>
 
+                {/* i want you to do some research for me, act as an instagram social media marketer, tell me ten fraustrations, ten desires and ten fears that business and company owners experience with their website 
+                including areas relating to lead  
+                in a table format label x-axis 1-10 and y axis fraustrations, desires and fears
+                
+                */}
+                
                 
 
                 <BreadCrumbs links={['Home', 'Our works']}/>
@@ -129,9 +135,9 @@ const APortfolio:FC<any> = ({portfolio, i}) => {
         </Parallax>
 
 
-        <div className="flex justify-center gap-5 absolute bottom-[5vh] md:bottom-0 min-h-[10vh] w-full text-center">
+        <div className="flex justify-center gap-5 absolute bottom-[5vh] min-h-[10vh] w-full text-center">
             <Parallax id={portfolio.title.replaceAll(' ', '')+'header'} className={"center max-w-[90%]"}>
-                <div className="text-center border border-blue-900 bg-primary bg-opacity-80 p-3 px-6 rounded-full shadow-2xl flex flex-col md:flex-row items-center gap-2 justify-center max-w-full"><span>Click to view</span> <strong className="text-white"> {portfolio.title}</strong></div>
+                <div className="text-center border border-blue-900 bg-primary bg-opacity-80 p-3 px-6 rounded-full shadow-2xl flex flex-col items-center gap-2 justify-center max-w-full"><span>Click to view</span> <strong className="text-white"> {portfolio.title}</strong></div>
             </Parallax>
            
         </div>

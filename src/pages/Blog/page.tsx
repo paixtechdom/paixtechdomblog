@@ -68,7 +68,7 @@ export default function Blog() {
       <main className="min-h-screen center pb-[15vh] relative">
           <div className="w-11/12 lg:w-10/12 xl:w-9/12 center flex-col">
 
-          <section className="min-h-[70vh] lg:min-h-[80vh] center w-full gap-[50px] pt-[15vh] lg:pt-[5ch]">
+          <section className="min-h-[60vh] lg:min-h-[80vh] center w-full gap-[50px] pt-[15vh] lg:pt-[5ch]">
             <div className="flex flex-col center gap-5 w-full text-center">
               <h1 className="text-4xl lg:text-5xl font-bold text-blue-600 w-full lg:w-9/12">
                 Articles, Ideas and Inspirations for you

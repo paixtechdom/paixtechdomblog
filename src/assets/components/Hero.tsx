@@ -15,7 +15,7 @@ const Hero:FC<BlogDataInterface | any> = ({blog}) => {
           className='lg:w-5/12'
         />
         
-        <div className='w-full lg:w-9/12'>
+        <div className='w-11/12 lg:w-9/12'>
           <div className="flex gap-4 items-center text-sm text-gray-300">
               <p className="text-sm">
                 {blog?.name} &middot; {format(new Date(blog?.publishedAt), "dd MMM yyy")}

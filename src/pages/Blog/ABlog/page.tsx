@@ -1,17 +1,20 @@
 import Hero from '../../../assets/components/Hero'
 import { useParams } from 'react-router-dom'
 import { Client } from '../../../lib/Client'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { BlogDataInterface } from '../../../assets/components/BlogCard'
 import BlockContent from "@sanity/block-content-to-react"
 import styles from "./ABlog.module.css"
+import { AppContext } from '../../../App'
 
 const ABlogPage = () => {
     const {slug} = useParams()
     const [ blog, setBlog ] = useState<BlogDataInterface | any>({})
 
+    const { setCurrentNav } = useContext<any>(AppContext)
     useEffect(() => {
-        window.scrollTo(0,0)
+      setCurrentNav(4)
+      window.scrollTo(0,0)
     }, [])
     
     useEffect(() => {
@@ -52,9 +55,9 @@ const ABlogPage = () => {
             case 'h1':
               return <h1>{props.children}</h1>;
             case 'h2':
-              return <h2 className="text-blue-600">{props.children}</h2>;
+              return <h2 className="text-blue-600 text-xl">{props.children}</h2>;
             case 'h3':
-              return <h3 className="mt-5">{props.children}</h3>;
+              return <h3 className="mt-6 text-lg">{props.children}</h3>;
             case 'h4':
               return <h4 className="mt-5">{props.children}</h4>;
             case 'h5':
@@ -110,13 +113,16 @@ const ABlogPage = () => {
   return (
     <>
     <main className="min-h-screen center flex-col bg-gradient-to-r from-secondary via-primary to-secondary pb-[10vh] relative">
-
+    {
+          blog?.title && 
+          <div className="w-full lg:w-10/12 xl:w-9/12  min-h-screen fleex items-center flex-col text-lg gap-[50px] ] pt-[5vh] lg:pt-[2ch]">
+            <Hero blog={blog}/>
+          </div>
+        }
       <div className="w-11/12 lg:w-10/12 xl:w-9/12  min-h-screen fleex items-center flex-col text-lg gap-[50px] ] pt-[5vh] lg:pt-[2ch]">
         {
           blog?.title && 
           <>
-            <Hero blog={blog}/>
-
             <BlockContent 
               blocks={blog.body}
               projectId="m218clx9"

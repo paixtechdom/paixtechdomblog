@@ -1,19 +1,20 @@
 import { BiSearch } from "react-icons/bi";
-import { BsBellFill } from "react-icons/bs";
 import BlogCardList from "../../assets/components/BlogCardList";
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { Client } from "../../lib/Client"
 import { BlogDataInterface, CardSkeleton } from "../../assets/components/BlogCard";
 import { Helmet } from "react-helmet-async"
+import { AppContext } from "../../App";
 
 export default function Blog() {
   const [ fetchedBlogs, setFetchedBllogs ] = useState([])
   const [ fetching, setFetching ] = useState(false)
   const [ searchInput, setSearchInput ] = useState("")
-
   const blogs = fetchedBlogs?.filter((b : BlogDataInterface) => b.title.toLowerCase().includes(searchInput.toLowerCase()))
   
+  const { setCurrentNav } = useContext<any>(AppContext)
   useEffect(() => {
+    setCurrentNav(4)
     fetchBlogs()
  
     window.scrollTo(0,0)
@@ -72,19 +73,25 @@ export default function Blog() {
               <h1 className="text-4xl lg:text-5xl font-bold text-blue-600 w-full lg:w-9/12">
                 Articles, Ideas and Inspirations for you
               </h1>
-              <p className="text-gray-300 w-11/12 lg:w-9/12">
-                Looking to stay updated with latest trends on web, tech and business hacks? <br />Get fresh updates in your inbox to get started now
+              <p className="text-gray-300 w-11/12 lg:w-8/12">
+              Discover the latest in web development, technology, and business through our articles tailored to your needs.
               </p>
-              <form className="center flex-col lg:flex-row items-center gap-4">
-                <input type="text" placeholder="Your email" className="input"/>
-                <button type="submit" className="flex items-center gap-4 btn bg-transparent border-blue-600">
-                  <BsBellFill />
-                  <span className="">
-                    Subscribe
-                  </span>
+              {/* <p className="text-gray-300 w-11/12 lg:w-9/12">
+                Looking to stay updated with latest trends on web, tech and business hacks? <br />Get fresh updates in your inbox to get started now
+              </p> */}
+              {/* <form className="center flex-col lg:flex-row items-center gap-4"> */}
+                {/* <input type="text" placeholder="Your email" className="input"/> */}
+                <button type="submit" className="flex items-center gap-4 btn bg-transparent hover:bg-transparent hover:scale-90 transition-all duration-500 border-blue-600" onClick={() => {
+                  document.querySelector("#search")?.scrollIntoView({
+                    behavior: "smooth"
+                  })
+                }}>
+                    Get Inspired Today
+                  {/* <span className="">
+                  </span> */}
                 </button>
 
-              </form>
+              {/* </form> */}
             </div>
 
           </section>

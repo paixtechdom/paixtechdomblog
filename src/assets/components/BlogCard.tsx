@@ -32,7 +32,8 @@ const BlogCard:FC<BlogDataInterface | any> = ({blog}) => {
            <LazyLoadImage 
             src={blog?.mainImage?.asset.url}
             placeholderSrc={blog?.mainImage.alt}
-            className='w-full m-0 md:h-[30vh] md:object-cover'
+            width={100+"%"}
+            className='m-0 md:h-[30vh] md:object-cover relative'
             effect="blur"
            />
         </figure>

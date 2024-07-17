@@ -74,7 +74,7 @@ const Parallax:FC<ParallaxInterface> = ({id, children, className, index}) => {
 
     return(
         <div id={id} className={`relative `}>
-            <div className={`relative  transition-all duration-[1s] ${!isPosMatch ? `${index == 0 || index == 2 || index == 4 || index == 6 ? '-translate-x-[100vw]' : 'translate-x-[100vw]'} ` : 'translate-x-[0px]'} ${className}`}>
+            <div className={`relative  transition-all duration-[1s] ${!isPosMatch ? `${index == 0 || index == 2 || index == 4 || index == 6 ?'-translate-x-[25vw] opacity-0' : 'translate-x-[25vw] opacity-0'}` : ''} ${className}`}>
                 {children}
             </div>
         </div>

@@ -32,7 +32,7 @@ export const Navbar = () =>{
 
                     <i className={`bi bi-${showNav ? 'x-lg' : 'list'} cursor-pointer lg:hidden text-2xl`} onClick={() => setShowNav(!showNav)}></i>
 
-                    <nav className={`${showNav ? 'left-0' : '-left-[25vw] opacity-0 lg:left-0'} transition-all duration-1000 absolute py-9 lg:py-0 bg-gradient-to-l from-secondary via-primary to-secondary lg:from-transparent w-full lg:w-fit top-[8vh]  lg:top-0 lg:relative flex flex-col lg:flex-row gap-9 items-center border-b border-blue-900 lg:border-b-0`}>
+                    <nav className={`${showNav ? 'left-0' : '-left-[25vw] opacity-0 lg:opacity-100 lg:left-0'} transition-all duration-1000 absolute py-9 lg:py-0 bg-gradient-to-l from-secondary via-primary to-secondary lg:from-transparent w-full lg:w-fit top-[8vh]  lg:top-0 lg:relative flex flex-col lg:flex-row gap-9 items-center border-b border-blue-900 lg:border-b-0`}>
                         {
                             Navs.map((nav, i) => (
                                 <Link key={i} to={`/${nav.link}`} className={`flex w-11/12 lg:w-fit gap-2 items-center ${currentNav == i ? 'border-b-2 border-blue-900 font-bold text-blue-600' : ''} hover:text-blue-600 hover:border-b hover:border-blue-400`} onClick={() => {

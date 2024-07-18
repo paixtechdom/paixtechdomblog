@@ -16,7 +16,7 @@ return(
 
             {
                 data.map((d:any, i:number) => (
-                    <Parallax key={i} id={d.id} className='h-full flex flex-col border border-blue-900 bg-secondary bg-opacity-30 p-5 md:p-9 rounded-xl gap-2 leading-relaxed tracking-wide' index={i}>
+                    <Parallax key={i} id={d.id} className='h-full w-full flex flex-col border border-blue-900 bg-secondary bg-opacity-30 p-5 md:p-9 rounded-xl gap-2 leading-relaxed tracking-wide' index={i}>
                         <>
                             <div className="flex relative w-fi center h-12 md:h-16 w-2/12 md:w-3/12 p-3 mb-3">
                                 <div className="absolute border border-blue-900 top-0  left-50 w-12 h-12 md:w-16 md:h-16 rotate-45 rounded-tl-[25px]  rounded-br-[25px]">
@@ -28,9 +28,12 @@ return(
                             <h2 className="text-blue-600 text-xl">
                                 {d.title}
                             </h2> 
+                            {
+                                d.desc &&
                             <p className="text- md text-gray-300">
                                 {d.desc}
                             </p>
+                            }
                         </>
                     </Parallax>
                 ))
@@ -73,7 +76,7 @@ const Parallax:FC<ParallaxInterface> = ({id, children, className, index}) => {
     }, [])
 
     return(
-        <div id={id} className={`relative `}>
+        <div id={id} className={`relative w-full`}>
             <div className={`relative  transition-all duration-[1s] ${!isPosMatch ? `${index == 0 || index == 2 || index == 4 || index == 6 ?'-translate-x-[25vw] opacity-0' : 'translate-x-[25vw] opacity-0'}` : ''} ${className}`}>
                 {children}
             </div>

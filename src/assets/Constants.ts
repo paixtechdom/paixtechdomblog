@@ -138,14 +138,14 @@ const Gain = [
 
 const ValuesInfo = [
     {
-        title: 'You First',
+        title: 'Client Centric Projects',
         desc: "Your needs are our focus. We're here to ensure you're satisfied every step of the way.",
         icon: 'people-fill',
         id: 'slnd'
     },
     {
-        title: 'Empowering Your Online Presence',
-        desc: "We give you the tools and knowledge to thrive in the digital space, putting you in control.",
+        title: 'Innovative Solutions',
+        desc: "We deliver cutting-edge, innovative solutions that push technological boundaries, ensuring unique and scalable digital experience for our clients",
         icon: 'lightning-fill',
         id: 'slndsojvpa'
     },
@@ -157,7 +157,7 @@ const ValuesInfo = [
     },
     {
         title: 'Growing Together',
-        desc: "We're committed to continuous improvement, adapting to your needs as we grow your revenue together.",
+        desc: "We're committed to continuous improvements in technological trends, tailored to your needs.",
         icon: 'sort-up-alt',
         id: 'aldmvlkw'
     },
@@ -166,16 +166,22 @@ const ValuesInfo = [
 
 const ServicesInfo = [
     {
+        id: 'vslnakawj',
+        title: 'Website Development',
+        desc: 'Experience the power of interactive web applications with our customized solutions. From dynamic forms to real-time updates, we leverage cutting-edge technologies to enhance user engagement and functionality on your website',
+        icon: 'code-slash'
+    },
+    {
         id: 'sfnflan',
         title: 'Website Design',
         desc: 'Our design services are tailored to elevate your brand and captivate your audience. Our commitment is to bring your vision to life through thoughtful and impactful design solutions that set your business apart in a crowded digital landscape.',
         icon: 'laptop'
     },
     {
-        id: 'vslnakawj',
-        title: 'Website Development',
-        desc: 'Experience the power of interactive web applications with our customized solutions. From dynamic forms to real-time updates, we leverage cutting-edge technologies to enhance user engagement and functionality on your website',
-        icon: 'code-slash'
+        id: 'pwrnnfninw',
+        title: 'E-Commerce solutions',
+        desc: 'Unleash the potential of online selling with our tailored e-commerce solutions. We create robust, secure and user-friendly online stores that not only showcase your products but also provide a seamless and secure shopping experience for your customers.',
+        icon: 'cart4'
     },
     {
         id: 'knvjnoqldnd',
@@ -188,12 +194,6 @@ const ServicesInfo = [
         title: 'Website Maintenance',
         desc: 'Secure the longetivity of your online presence with our comprehensive website maintenance services. We handle updates, security patches, and performance enhancements, allowing you to focus on your business while we take care of the technical details.',
         icon: 'tools'
-    },
-    {
-        id: 'pwrnnfninw',
-        title: 'E-Commerce solutions',
-        desc: 'Unleash the potential of online selling with our tailored e-commerce solutions. We create robust, secure and user-friendly online stores that not only showcase your products but also provide a seamless and secure shopping experience for your customers.',
-        icon: 'cart4'
     },
     {
         id: 'siinnqien',
@@ -318,7 +318,7 @@ const Questions = [
         id: 'queswopr',
         icon: 'patch-question-fill',
         title: 'How long does it take to build a website?',
-        desc: 'This vary depending the complexity of the project, and the responsiveness of the client in providing feedback and content. On average, a basic website can take anywhere from 3 days to 2 weeks, more complex projects may take a month or more'
+        desc: 'This vary depending the complexity of the project, and the responsiveness of the client in providing feedback and content. On average, a basic website can take anywhere from 5 days to 2 weeks, more complex projects may take a month or more'
     },
     {
         id: 'queswrrrer',

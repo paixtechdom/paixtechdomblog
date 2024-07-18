@@ -39,7 +39,7 @@ const About = () => {
                 image={compass} 
                 header={'About Paix Techdom'} 
                 text={[
-                    'At Paix Techdom, we are committed to empowering organizations, startups, and companies of all sizes with the perfect website solutions to enhance awareness, generate leads, and foster growth.',
+                    'At Paix Techdom, we are committed to empowering organizations, startups, and companies with the perfect website solutions to enhance awareness, generate leads, and foster growth.',
                     'With a dedicated focus on custom website development, we tailor our services to address your unique preferences, needs, and challenges.']} 
                 scrollTo={'Values'}/>
                 <BreadCrumbs links={['Home', 'About Us']}/>

@@ -14,31 +14,37 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { PagesHero } from "../Components/PagesHero"
 import img from "../../assets/img/portfolio.jpg"
 import { Parallax } from "../../assets/components/Parallax"
+import { BsLink45Deg } from "react-icons/bs"
 
 const PortfolioItems = [
     {
         title: 'Onidson Travels and Logistics Ltd',
+        desc: ["Designed a user-friendly website with multiple pages dedicated to their services, aviation courses they offer and a detailed contact section", "Our work ensured a strong online presence and improved accessibility for their clients"],
         link: 'https://onidsontravels.com',
         img: onidson
     },
     {
         title: 'Saculiet Enterprises Nigeria',
         link: 'https://saculietdrivingschool.com',
+        desc: ["For the Driving school arm of the company, we developed a website showcasing their service and expertise in the sector, featrueing a certificate verification portal for organizations, and a gallery for photos and vidoes."],
         img: saculietImg
     },
     {
         title: 'Christ Liberty Assembly',
+        desc: ["Developed a professional church website featuring a landing page, gallery, page for sermons and articles."],
         link: 'https://christlibertyassembly.org.ng',
         img: classImg
     },
     {
         title: 'Macmay Group',
         link: 'https://macmaygroup.netlify.app',
+        desc: ["We created a comprehensive multi-page website to shpwcase their diverse services in investments, agriculture, and food processing.", "The site provides detailed insights into their operations and enhances their online presence."],
         img: macmayImg
     },
     {
         title: 'Albert Interiors',
         link: 'https://albert-interiors.netlify.app',
+        desc: ["For Albert Interiors, our landing page beautifully and elegantly highlights services and designs, offering a glimpse into their expertise in creating bespoke living spaces."],
         img: albertImg
     },
     // {
@@ -75,25 +81,17 @@ const Portfolio = () => {
                         header={'Discover our works'}
                         scrollTo={"pro"}
                     />
-                </section>
-
-                {/* i want you to do some research for me, act as an instagram social media marketer, tell me ten fraustrations, ten desires and ten fears that business and company owners experience with their website 
-                including areas relating to lead  
-                in a table format label x-axis 1-10 and y axis fraustrations, desires and fears
+                </section>            
                 
-                */}
-                
-                
-
                 <BreadCrumbs links={['Home', 'Our works']}/>
 
-                <section id='pro' className="center flex-col gap- mt-[20vh]">
+                <section id='pro' className="center flex-col gap- mt-[20vh] w-full">
                     <div className="w-11/12 lg:w-10/12 xl:w-9/12 mb-[10vh]">
-                        <Parallax id={"ourworks"}>
-                            <h2 className="text-blue-600 text-2xl my-4">Check out some of our projects</h2>
+                        <Parallax id={"ourworks"} className="w-full">
+                            <h2 className="text-blue-600 text-2xl my-4 w-full">Check out some of our projects</h2>
                         </Parallax>
                     </div>
-                    <div className="flex flex-col lg:grid lg:grid-cols-2 w-11/12 lg:w-10/12 xl:w-9/12 gap-[10vh] lg:gap-[5vh] ">
+                    <div className="flex flex-col w-11/12 lg:w-10/12 xl:w-9/12 gap-[20vh] lg:gap-[30vh]">
 
                         {
                             PortfolioItems.map((portfolio, i) => (
@@ -117,38 +115,46 @@ const Portfolio = () => {
 const APortfolio:FC<any> = ({portfolio, i}) => {
  
     return(
-        <a id={portfolio?.title.replaceAll(' ', '')} href={portfolio.link} target="_blank" className={`w-full center flex-col -reverse lg :flex-row${i%2 !== 0 ? "-reverse" : ""} gap-[50px] lg:mb-0 relative overflow-hidden`} 
-            // useRef={projectRef}
-        >
-                                
-        <Parallax id={portfolio?.title.replaceAll(' ', '')} className={"w-full min-h-[50vh] relative"}>
-            <>
-            <div className="absolute w-full h-full bg-secondary animate-pulse top-0 left-0"></div>
+        // <a id={portfolio?.title.replaceAll(' ', '')} href={portfolio.link} target="_blank" className={`w-full center flex-col -reverse lg:flex-row${i%2 == 0 ? "-reverse" : ""} gap-[50px] lg:mb-0 relative overflow-hidden`} 
+        <a id={portfolio?.title.replaceAll(' ', '')} target="_blank" className={`w-full center flex-col -reverse lg:flex-row${i%2 == 0 ? "-reverse" : ""} gap-[3vh] lg:gap-[50px] lg:mb-0 relative overflow-hidden`} 
+            
+        >                                
+            <Parallax id={portfolio?.title.replaceAll(' ', '')} className={"lg:5/12 lg:h-[60vh] xl:h-[70vh] relative"}>
+                <>
+                <div className="absolute w-full h-full bg-transparent animate-pulse top-0 left-0"></div>
 
-            <LazyLoadImage 
-                src={portfolio.img} 
-                placeholderSrc={portfolio.title} 
-                className="w-full"
-                effect="blur"
-                />
-            </>
-        </Parallax>
-
-
-        <div className="flex justify-center gap-5 absolute bottom-[5vh] min-h-[10vh] w-full text-center">
-            <Parallax id={portfolio.title.replaceAll(' ', '')+'header'} className={"center max-w-[90%]"}>
-                <div className="text-center border border-blue-900 bg-primary bg-opacity-80 p-3 px-6 rounded-full shadow-2xl flex flex-col items-center gap-2 justify-center max-w-full"><span>Click to view</span> <strong className="text-white"> {portfolio.title}</strong></div>
+                <LazyLoadImage 
+                    src={portfolio.img} 
+                    placeholderSrc={portfolio.title} 
+                    className="w-full h-full lg:object-fit"
+                    effect="blur"
+                    />
+                </>
             </Parallax>
-           
-        </div>
 
-        <div className={`top-0 absolute left-0 h-full w-full bg-secondary scale-125 transition-all duration-500 center flex-col lg:hover:opacity-90 active:opacity-90 opacity-0
-        `}>
-            <i className="bi bi-eye-fill text-4xl"></i> 
-            <p>
-                Click to view site
-            </p>
-        </div>
+            <Parallax id={portfolio?.title.replaceAll(' ', '')+'desc'} className="relative flex flex-col w-full gap-5">
+                <>
+                <h2 className="font-bold text-blue-600 text-2xl">
+                    {portfolio.title}
+                </h2>
+                <div className="flex flex-col gap-2">
+                    {
+                        portfolio.desc.map((p :string, i:number) => (
+                            <p key={i} className="text-gray-300 relative">
+                                {p}
+                            </p>
+                        ))
+                    }
+                </div>
+                    
+                <a href={portfolio.link} target="_blank" className="btn w-fit border border-blue-600 font-light bg-transparent"> 
+                    <BsLink45Deg className="text-2xl"/>
+                    View Website</a>
+
+                </>
+            </Parallax>
+
+        
     </a>
     )
 }

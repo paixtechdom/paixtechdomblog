@@ -9,6 +9,7 @@ import { Hero } from './Hero'
 import { GridSlider } from '../Components/GridSlider'
 import { Steps } from './Steps'
 import { Helmet } from "react-helmet-async"
+import SomeProjects from './SomeProjects'
 
 
 
@@ -23,7 +24,7 @@ const Home = () => {
         <>       
             <Helmet>
                 <title>
-                    Paix Techdom - Web Development Company
+                    Paix Techdom - Website Development Company
                 </title>
                 <link rel="icon" type="image/png" href={logo} />
             </Helmet>
@@ -41,11 +42,14 @@ const Home = () => {
                 iconText={'Start Now'} 
                 icon={'arrow-right'} 
                 navigateTo={'contact'}
-                />
+            />
         
+            <SomeProjects />
+            
             <GridSlider 
                 data={Gain}
-                />
+            />
+
 
             <Steps />
 

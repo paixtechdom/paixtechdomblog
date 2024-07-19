@@ -72,7 +72,7 @@ export const AppRouter = () => {
                         <Navbar />
                         <HeroBg />
                         
-                        <IconButton icon={'arrow-up'} className={`fixed bottom-[5%] z-50 scale-125  transition-all duration-1000 ${scrolledDown ? 'right-[5%]' : '-right-[50%]'}`} func={() => {
+                        <IconButton icon={'arrow-up'} className={`fixed bottom-[15%] z-50 scale-125  transition-all duration-1000 lg:hidden ${scrolledDown ? 'right-[5%]' : '-right-[50%]'}`} func={() => {
                         scrollTo({
                                 top: 0,
                                 behavior: 'smooth'

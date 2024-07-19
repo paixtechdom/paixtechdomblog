@@ -16,7 +16,7 @@ import img from "../../assets/img/portfolio.jpg"
 import { Parallax } from "../../assets/components/Parallax"
 import { BsLink45Deg } from "react-icons/bs"
 
-const PortfolioItems = [
+export const PortfolioItems = [
     {
         title: 'Onidson Travels and Logistics Ltd',
         desc: ["Designed a user-friendly website with multiple pages dedicated to their services, aviation courses they offer and a detailed contact section", "Our work ensured a strong online presence and improved accessibility for their clients"],
@@ -30,16 +30,16 @@ const PortfolioItems = [
         img: saculietImg
     },
     {
-        title: 'Christ Liberty Assembly',
-        desc: ["Developed a professional church website featuring a landing page, gallery, page for sermons and articles."],
-        link: 'https://christlibertyassembly.org.ng',
-        img: classImg
-    },
-    {
         title: 'Macmay Group',
         link: 'https://macmaygroup.netlify.app',
         desc: ["We created a comprehensive multi-page website to shpwcase their diverse services in investments, agriculture, and food processing.", "The site provides detailed insights into their operations and enhances their online presence."],
         img: macmayImg
+    },
+    {
+        title: 'Christ Liberty Assembly',
+        desc: ["Developed a professional church website featuring a landing page, gallery, page for sermons and articles."],
+        link: 'https://christlibertyassembly.org.ng',
+        img: classImg
     },
     {
         title: 'Albert Interiors',
@@ -128,7 +128,7 @@ const APortfolio:FC<any> = ({portfolio, i}) => {
                     placeholderSrc={portfolio.title} 
                     className="w-full h-full lg:object-fit"
                     effect="blur"
-                    />
+                />
                 </>
             </Parallax>
 

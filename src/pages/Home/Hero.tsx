@@ -40,8 +40,8 @@ const Hero = () => {
 
 
     return(
-        <section className="relative center w-full  md:h-screen  overflow-hidden">
-            <div className="absolute hidden lg:flex w-full justify-between items-center z-20">
+        <section className="relative center w-full lg:h-screen  overflow-hidden pt-[3vh] md:pt-[5ch] lg:pt-0">
+            <div className="absolute hidden lg:flex w-full justify-between items-center z-20 ">
 
                 <div className="bi bi-chevron-left text-5xl text-gray-300 cursor-pointer h-[250px] center rounded-full w-[100px] lg:w-[150px] p-6 rounded-r-3xl transition-all duration-1000 hover:bg-black hover:bg-opacity-20"  onClick={() => setCurrentSlide(currentSlide == 0 ? HeroContent.length - 1 : prev => prev - 1)}></div>
 
@@ -56,7 +56,7 @@ const Hero = () => {
                 <SmSlider currentSlide={currentSlide} sliderRef={sliderRef} handleTouchEnd={handleTouchEnd} handleTouchStart={handleTouchStart}/>
 
             <div className="center absolute top-[85vh] md:top-[90vh] z-20">
-                <div className="center gap-3 bg-blue-900 border border-blue-900 bg-opacity-30 p-4 rounded-full px-9">
+                <div className="center gap-3 bg-blue-900 backdrop-blur-xl border border-blue-900 bg-opacity-30 p-4 rounded-full px-9">
                     {
                         HeroContent.map((i, j) => (
                             <p key={j} className={`${currentSlide == j ? 'h-4 lg:h-5 w-4 lg:w-5 bg-blue-900' : 'w-3 h-3 bg-white'} border border-blue-900 rounded-full transition-all duration-500 cursor-pointer`} onClick={() => setCurrentSlide(j)}>
@@ -145,7 +145,7 @@ const SmSlider:FC<SliderInterface> = ({currentSlide, sliderRef, handleTouchStart
             onTouchEnd={handleTouchEnd}
             ref={sliderRef}
         >
-            <div className="overflow-hidden w-full flex justify-start h-fit pt-[15vh]">
+            <div className="overflow-hidde n w-full flex justify-start h-fit pt-[15vh]">
 
                 <div className={`flex transition-all duration-1000`} style={{
                     width: HeroContent.length*100+'vw',
@@ -171,7 +171,7 @@ const SmSlider:FC<SliderInterface> = ({currentSlide, sliderRef, handleTouchStart
             
             
             
-            <div className="overflow-hidden w-full flex justify-end max-h-96 md:max-h-96 items-start rounded-3xl">
+            <div className="overflow-hidden w-[100vw] flex justify-end max-h-96 md:max-h-96 items-start rounded-3xl">
 
                 <div className={`flex flex-row-reverse transition-all duration-1000 h-fit`} style={{
                         width: HeroContent.length*100+'vw',
@@ -180,8 +180,10 @@ const SmSlider:FC<SliderInterface> = ({currentSlide, sliderRef, handleTouchStart
 
                     {
                         HeroContent.map((content, i) => (
-                            <div key={i} className="flex flex-col  justify-start items-start w-[100vw] gap-4 h-fit">
-                                <img src={content.img} alt={'Image for ' + content.header} className="w-full h-fit rounded-3xl "/>
+                            <div key={i} className="flex justify-center w-[100vw] overflow-hidden">
+                                <div key={i} className="center w-11/12 h-fit gap-4 overflow-hidden">
+                                    <img src={content.img} alt={'Image for ' + content.header} className="w-full h-full object-fit rounded-3xl"/>
+                                </div>
                             </div>
                         ))
                     }

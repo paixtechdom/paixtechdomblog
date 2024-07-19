@@ -17,7 +17,7 @@ const Contact = () => {
  
 
     useEffect(() => {
-        setCurrentNav(5)
+        setCurrentNav(6)
         document.documentElement.scrollTop = 0
     }, [])
 

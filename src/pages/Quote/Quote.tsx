@@ -12,7 +12,7 @@ const Quote = () => {
     const { setCurrentNav } = useContext<any>(AppContext) 
 
     useEffect(() => {
-        setCurrentNav(4)
+        setCurrentNav(5)
         document.documentElement.scrollTop = 0
     }, [])
 

@@ -42,27 +42,27 @@ const Navs = [
 
 const HeroContent = [
     {
-        header: 'Your business can still soar higher',
+        header: 'We build custom websites for your business needs and ideas.',
         text: [
-            'Unleash the potential of your business with our tailored web services. Start building your online empire today with our free consultation!', 
+            'Are you in need of a website for your organization, business or idea?', 
         ],
         color: 'text-blue-400',
         img: manoncliff
     },
     {   
-        header: 'Transform Your Ideas into Reality, Starting Today',
+        header: 'Take the next step to transform your ideas into reality today.',
         text: ['Take advantage of our free consultation to bring your visions to life. Your journey to success begins now!'],
         color: 'text-orange-400',
         img: bulb
     },
     {
-        header: 'You + Our Services = Limitless Possibilities',
-        text: ["Discover how our services can elevate your online presence. Let's explore new possibilities together, starting now"],
+        header: "Leverage unlimited possibilities through the digital space",
+        text: ["Discover how a unique website can elevate your lead generation and online awareness. Let's explore new possibilities together, starting now"],
         color: 'text-yellow-300',
         img: phone
     },
     {
-        header: 'Step into the Future: Your Online Transformation Awaits',
+        header: "We bring out the uniqueness of your business and ideas.",
         text: ['Experience the excitement of a new website crafted just for you. Start your journey towards success today with our free consultation!'],
         color: 'text-red-400',
         img: laptop

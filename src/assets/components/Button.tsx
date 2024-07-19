@@ -19,7 +19,7 @@ const Button:FC<ButtonInterface> = ({text, className, icon, func, showIcon, setS
     }, [showIcon])
 
     return(
-        <div className={`cursor-pointer text-sm p-1 center transition-all duration-500 px-4 border border-blue-900 h-fit rounded-xl rounded-tr-[20px] ${className} flex gap-3 overflow-hidden bg-[rgba(0,0,35)]`} 
+        <div className={`cursor-pointer text-sm p-1 center transition-all duration-500 px-4 border border-blue-900 h-fit rounded-xl btn ${className} flex gap-3 overflow-hidden bg-primary hover:bg-secondary hover:border-blue-900`} 
             onClick={() => {
                 if(func){
                     func()

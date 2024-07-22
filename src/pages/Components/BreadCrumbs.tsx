@@ -15,7 +15,7 @@ export const BreadCrumbs:FC<any> = ({links}) => {
                             {link}
                             <i className={`bi bi-chevron-right mx-2`}></i>
                         </Link>  :
-                        <div key={i} className="text-blue-600 cursor-pointer font-bold text-lg">
+                        <div key={i} className="text-orange -600 cursor-pointer font-bold text-lg">
                             {link}
                         </div> 
                     ))

@@ -5,7 +5,7 @@ export const NewsLetter = () => {
         <>
             <section className="flex flex-wrap gap-6 justify-between w-11/12 lg:w-10/12 xl:w-9/12">
                 <div>
-                    <h2 className="font-bold text-blue-600 text-4xl">Subscribe to our newsletter</h2>
+                    <h2 className="font-bold text-orange text-4xl">Subscribe to our newsletter</h2>
                     <p>Get fresh updates into your inbox to stay updated with trends tailored for you</p>
 
                 </div>

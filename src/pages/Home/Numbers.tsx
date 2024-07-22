@@ -42,7 +42,7 @@ const No:FC<any> = ({num, i}) => {
     }
 //    table issue with display 
     return(
-        <div className={`center m-auto flex-col gap-2 shadow-lg transition-all duration-1000 p -9 relative h-[16ch] w-[16ch] border border-blue-900
+        <div className={`center m-auto flex-col gap-2 shadow-lg transition-all duration-1000 p -9 relative h-[16ch] w-[16ch] border border-orange
             ${
                 i == 0 ? "border-b-0 border-r-0 rounded-t-3xl" :
                 i == 1 ? "border-l-0 border-b-0 rounded-t-3xl" :
@@ -55,8 +55,8 @@ const No:FC<any> = ({num, i}) => {
             
             <Parallax id={num.title}>
                 <>
-                <p className='text-3xl text-blue-400 text-center'>{newNo}+</p>
-                <div className='flex items-center text-gray-300 gap-2 my-2 text-sm'>
+                <p className='text-3xl text-orange -400 text-center'>{newNo}+</p>
+                <div className='flex items-center text-gray-100 gap-2 my-2 text-sm'>
                     <i className={`bi bi-${num.img} text-2xl`}></i>
                     <p>{num.title}</p>
 

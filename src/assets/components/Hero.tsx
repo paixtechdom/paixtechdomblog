@@ -16,13 +16,14 @@ const Hero:FC<BlogDataInterface | any> = ({blog}) => {
         />
         
         <div className='w-11/12 lg:w-9/12'>
-          <div className="flex gap-4 items-center text-sm text-gray-300">
+          <div className="flex gap-4 items-center text-sm text-gray-100">
               <p className="text-sm">
-                {blog?.name} &middot; {format(new Date(blog?.publishedAt), "dd MMM yyy")}
+                 {/* &middot; */}
+                {format(new Date(blog?.publishedAt), "dd MMM yyy")}
               </p>
             </div>
 
-          <h1 className="text-4xl tracking-wide leading-[45px] font-bold text-blue-600 capitalize">{blog?.title}</h1>
+          <h1 className="text-4xl tracking-wide leading-[45px] font-bold text-orange -600 capitalize">{blog?.title}</h1>
         </div>
       </div>
     </section>

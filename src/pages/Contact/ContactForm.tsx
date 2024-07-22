@@ -75,7 +75,7 @@ export const ContactForm = () => {
         
         <div className="lg:w-10/12 w-11/12 my-4 flex flex-col gap-7">
             <Parallax id='sendusamessage'>
-                <h2 className="text-4xl text-blue-600">Send Us a message now</h2>
+                <h2 className="text-4xl text-orange -600">Send Us a message now</h2>
             </Parallax>
             <Parallax id={'formname'} className={'w-full'}>
                 <>
@@ -123,7 +123,7 @@ export const ContactForm = () => {
             </Parallax>
 
             <Parallax id={'formsubmit'} className={'w-full'}>
-                <button type="submit" disabled={isLoading} className={` bg-gradient-to-l from-[rgba(0,0,10)] via-[rgba(0,0,24)] to-[rgba(0,0,10)] pt-5 px-6 outline-none border border-blue-900 text-blue-600 rounded-2xl w-full transition-all duration-1000 gap-3 text-xl p-3 center cursor-pointer hover:scale-90 focus:initial ${isLoading ? 'cursor-not-allowed' : 'cursor-pointer hover:scale-90'}`}>
+                <button type="submit" disabled={isLoading} className={` bg-gradient-to-l from-[rgba(0,0,10)] via-[rgba(0,0,24)] to-[rgba(0,0,10)] pt-5 px-6 outline-none border border-blue-900 text-orange -600 rounded-2xl w-full transition-all duration-1000 gap-3 text-xl p-3 center cursor-pointer hover:scale-90 focus:initial ${isLoading ? 'cursor-not-allowed' : 'cursor-pointer hover:scale-90'}`}>
                     {
                         isLoading ? 'Sending...' : 'Send Message'
                     }

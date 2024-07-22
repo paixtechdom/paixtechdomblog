@@ -55,15 +55,15 @@ const ABlogPage = () => {
             case 'h1':
               return <h1>{props.children}</h1>;
             case 'h2':
-              return <h2 className="text-blue-600 text-3xl mt-[10vh] lg:mt-[15vh]">{props.children}</h2>;
+              return <h2 className="text-orange text-3xl mt-[7vh] mb-5 lg:mt-[12vh]">{props.children}</h2>;
             case 'h3':
-              return <h3 className="lg:mt-[15vh] mb-5  mt-[10vh] text-blue-600 text-3xl">{props.children}</h3>;
+              return <h3 className="lg:mt-[12vh] mb-5  mt-[7vh] text-orange text-3xl">{props.children}</h3>;
             case 'h4':
-              return <h4 className="mt-5">{props.children}</h4>;
+              return <h4 className="mt-5 mb-3">{props.children}</h4>;
             case 'h5':
-              return <h5 className="mt-4">{props.children}</h5>;
+              return <h5 className="mt-4 mb-3">{props.children}</h5>;
             case 'h6':
-              return <h6 className="mt-3">{props.children}</h6>;
+              return <h6 className="mt-3 mb-2">{props.children}</h6>;
             case 'blockquote':
               return <blockquote className={styles.blockquote}>{props.children}</blockquote>;
             case 'code':

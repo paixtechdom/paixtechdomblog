@@ -88,7 +88,7 @@ const Portfolio = () => {
                 <section id='pro' className="center flex-col gap- mt-[20vh] w-full">
                     <div className="w-11/12 lg:w-10/12 xl:w-9/12 mb-[10vh]">
                         <Parallax id={"ourworks"} className="w-full">
-                            <h2 className="text-blue-600 text-2xl my-4 w-full">Check out some of our projects</h2>
+                            <h2 className="text-orange text-4xl my-4 w-full">Check out some of our projects</h2>
                         </Parallax>
                     </div>
                     <div className="flex flex-col w-11/12 lg:w-10/12 xl:w-9/12 gap-[20vh] lg:gap-[30vh]">
@@ -134,7 +134,7 @@ const APortfolio:FC<any> = ({portfolio, i}) => {
 
             <Parallax id={portfolio?.title.replaceAll(' ', '')+'desc'} className="relative flex flex-col w-full gap-5">
                 <>
-                <h2 className="font-bold text-blue-600 text-2xl">
+                <h2 className="font-bold text-orange text-2xl">
                     {portfolio.title}
                 </h2>
                 <div className="flex flex-col gap-2">
@@ -147,7 +147,7 @@ const APortfolio:FC<any> = ({portfolio, i}) => {
                     }
                 </div>
                     
-                <a href={portfolio.link} target="_blank" className="btn w-fit border border-blue-600 font-light bg-transparent"> 
+                <a href={portfolio.link} target="_blank" className="btn w-fit border border-orange font-light bg-transparent"> 
                     <BsLink45Deg className="text-2xl"/>
                     View Website</a>
 

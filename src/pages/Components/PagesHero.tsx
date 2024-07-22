@@ -17,10 +17,10 @@ export const PagesHero:FC<PagesHeroInterface> = ({image, header, text, scrollTo,
 
             <section className="flex flex-col lg:flex-row w-[90%] lg:w-10/12 xl:w-9/12 justify-between items-center h-full z-10 gap-9 overflow-hid den relative pt-[15vh] lg:pt-[5ch]">
                 <div className="flex flex-col justify-center w-full lg:w-8/12 z-20 gap-4"> 
-                    <h1 className="text-5xl text-blue-600">
+                    <h1 className="text-5xl text-orange ">
                         {header}
                     </h1>
-                    <div className="flex flex-col gap-3 text-gray-300 tracking-wide leading-relaxed ">
+                    <div className="flex flex-col gap-3 text-gray-100 tracking-wide leading-relaxed ">
                         {
                             text.map((text: string, i:number) => (
                                 <p key={i}>{text}</p>

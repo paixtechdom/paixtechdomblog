@@ -13,6 +13,8 @@ export default {
       colors :{ 
         "primary": "rgba(0,0,24)",
         "secondary": "rgba(0,0,10)",
+        "orange": "#F29B31",
+        "tertiary": "#F2210B",
       }
     },
   },

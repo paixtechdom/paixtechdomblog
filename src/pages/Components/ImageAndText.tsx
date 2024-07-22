@@ -26,11 +26,11 @@ export const ImageAndText:FC<ImageTextInterface> = ({id, title, desc, img, class
             <div className={`center ${className ? className : 'flex-col lg:flex-row'} w-11/12 lg:w-10/12 xl:w-9/12 gap-[5ch]`}>
                 <div className={`flex flex-col gap-4 lg:w-10/12`}>
                     <Parallax id={`shit${id}`}>
-                        <h2 className={`text-4xl text-blue-600`}>{title}</h2>
+                        <h2 className={`text-4xl text-orange -600`}>{title}</h2>
                     </Parallax>
                     
                     <Parallax id={`shiet${id}`}>
-                        <div className={`text-gray-300 tracking-wide leading-relaxed gap-2 flex flex-col `}>
+                        <div className={`text-gray-100 tracking-wide leading-relaxed gap-2 flex flex-col `}>
                         {
                         desc?.map((d:string, i:number) => (
                                 <p key={i}>{d}</p>

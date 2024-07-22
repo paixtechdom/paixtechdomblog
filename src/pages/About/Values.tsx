@@ -9,7 +9,7 @@ export const Values = () => {
         <section id='Values' className="center flex-col py-[9ch]">
             <div className="w-11/12 lg:10/12 xl:w-9/12 grid grid-cols-1 md:grid-cols-2">
                 <Parallax id={'values'}>
-                    <div className="text-blue-600 text-4xl">Our Values</div>
+                    <div className="text-orange text-4xl">Our Values</div>
                 </Parallax>
                     
             </div>     

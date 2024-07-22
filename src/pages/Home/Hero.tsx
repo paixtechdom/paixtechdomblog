@@ -43,9 +43,9 @@ const Hero = () => {
         <section className="relative center w-full lg:h-screen  overflow-hidden pt-[3vh] md:pt-[5ch] lg:pt-0">
             <div className="absolute hidden lg:flex w-full justify-between items-center z-20 ">
 
-                <div className="bi bi-chevron-left text-5xl text-gray-300 cursor-pointer h-[250px] center rounded-full w-[100px] lg:w-[150px] p-6 rounded-r-3xl transition-all duration-1000 hover:bg-black hover:bg-opacity-20"  onClick={() => setCurrentSlide(currentSlide == 0 ? HeroContent.length - 1 : prev => prev - 1)}></div>
+                <div className="bi bi-chevron-left text-5xl text-gray-100 cursor-pointer h-[250px] center rounded-full w-[100px] lg:w-[150px] p-6 rounded-r-3xl transition-all duration-1000 hover:bg-black hover:bg-opacity-20"  onClick={() => setCurrentSlide(currentSlide == 0 ? HeroContent.length - 1 : prev => prev - 1)}></div>
 
-                <div className="bi bi-chevron-right text-5xl text-gray-300 cursor-pointer h-[250px] center rounded-full w-[100px] lg:w-[150px] p-6 rounded-l-3xl transition-all duration-1000 hover:bg-black hover:bg-opacity-20"  onClick={() => 
+                <div className="bi bi-chevron-right text-5xl text-gray-100 cursor-pointer h-[250px] center rounded-full w-[100px] lg:w-[150px] p-6 rounded-l-3xl transition-all duration-1000 hover:bg-black hover:bg-opacity-20"  onClick={() => 
                     setCurrentSlide(currentSlide === HeroContent.length - 1 ? 0 : prev => prev + 1 )
                     }></div>
 
@@ -56,10 +56,10 @@ const Hero = () => {
                 <SmSlider currentSlide={currentSlide} sliderRef={sliderRef} handleTouchEnd={handleTouchEnd} handleTouchStart={handleTouchStart}/>
 
             <div className="center absolute top-[85vh] md:top-[90vh] z-20">
-                <div className="center gap-3 bg-blue-900 backdrop-blur-xl border border-blue-900 bg-opacity-30 p-4 rounded-full px-9">
+                <div className="center gap-3 bg-secondary backdrop-blur-xl border border-orange bg-opacity-30 p-4 rounded-full px-9">
                     {
                         HeroContent.map((i, j) => (
-                            <p key={j} className={`${currentSlide == j ? 'h-4 lg:h-5 w-4 lg:w-5 bg-blue-900' : 'w-3 h-3 bg-white'} border border-blue-900 rounded-full transition-all duration-500 cursor-pointer`} onClick={() => setCurrentSlide(j)}>
+                            <p key={j} className={`${currentSlide == j ? 'h-4 lg:h-5 w-4 lg:w-5 bg-orange ' : 'w-3 h-3 bg-secondary'} border border-orange  rounded-full transition-all duration-500 cursor-pointer`} onClick={() => setCurrentSlide(j)}>
                                <span className="hidden">{i.header}</span></p>
                         ))
                     }
@@ -85,8 +85,8 @@ const XlSlider:FC<SliderInterface> = ({currentSlide}) => {
                             HeroContent.map((content, i) => (
                                 <div key={i} className="flex flex-col h-screen justify-center gap-4">
 
-                                    <h1 className="text-4xl text-blue-600">{content.header}</h1>
-                                    <div className="text-gray-300  tracking-wide leading-relaxed flex flex-col gap-3">{
+                                    <h1 className="text-5xl text-orange leading-[50px]">{content.header}</h1>
+                                    <div className="text-gray-100  tracking-wide leading-relaxed flex flex-col gap-3">{
                                         content.text.map((cont, i) => (
                                             <p key={i}>{cont}</p>
                                         ))
@@ -156,8 +156,8 @@ const SmSlider:FC<SliderInterface> = ({currentSlide, sliderRef, handleTouchStart
                         HeroContent.map((content, i) => (
                             <div key={i} className="flex flex-col  justify-center w-[100vw] gap-4">
 
-                                <h1 className="text-3xl text-blue-600 w-[85%]">{content.header}</h1>
-                                <div className="text-gray-300  tracking-wide leading-relaxed w-[90%]">{content.text}</div>
+                                <h1 className="text-5xl text-orange -600 w-[85%] leading-[50px]">{content.header}</h1>
+                                <div className="text-gray-100  tracking-wide leading-relaxed w-[90%]">{content.text}</div>
                                 <Link to={"/Contact"}>
                                 <Button text={'start now'} className="w-fit" icon={'cursor-fill'}
                                     />

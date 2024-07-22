@@ -11,8 +11,8 @@ const SomeProjects = () => {
         <div className="w-11/12 lg:w-10/12 xl:w-9/12 mb-[2vh]">
             <Parallax id={"recentworks"} className="w-full flex flex-col">
                 <>
-                <h2 className="text-blue-600 text-4xl my-4 w-full">Recent projects</h2>
-                {/* <Link to="/works" className='btn bg-transparent hover:bg-secondary hover:border-blue-900 border-blue-900 w-fit'>VIEW MORE</Link> */}
+                <h2 className="text-orange text-4xl my-4 w-full">Recent projects</h2>
+                {/* <Link to="/works" className='btn bg-transparent hover:bg-secondary hover:border-orange -900 border-orange -900 w-fit'>VIEW MORE</Link> */}
                 </>
             </Parallax>
         </div>

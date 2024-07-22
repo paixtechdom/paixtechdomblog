@@ -19,7 +19,7 @@ export const Loader = () => {
             <Ladder />
 
             <div className="center relative overflow-hidden flex-col z-10 bg-[rgba(0,0,24,0.8)] border border-blue-900 p-7 rounded-xl">
-                <p className="font-bold text-3xl text-blue-600 ">Paix Techdom</p>
+                <h3 className="font-bold text-3xl text-orange">Paix Techdom</h3>
 
                 <p className="text- italic text-sm text-gray-300">...growing your buisness...</p>
             </div>
@@ -59,7 +59,7 @@ const Ladder = () => {
                 <div className="flex flex-col items-center justify-center w-full gap-[8vh]">
                     {
                         steps.map((s, i) => (
-                        <p key={i} className={`w-full bg-[rgba(0,0,24)]  border-blue-800 h-6 transition-all duration-[2s] 
+                        <p key={i} className={`w-full bg-[rgba(0,0,24)]  border-orange -800 h-6 transition-all duration-[2s] 
                         ${lightUpStepsUp ? 'border-t' : ''}
                         ${lightUpStepsDown ? 'border-b' : ''}
                         `} style={{
@@ -82,11 +82,11 @@ interface PoleInterface{
 
 const LadderPole:FC<PoleInterface> = ({condition, rotate}) => {
     return(
-        <div className={`h-[170vh] w-5 bg-[rgba(0,0,24)] borde r border-blue-100  z-10 relatiive -translate-y-[5vh] ${rotate}`} 
+        <div className={`h-[170vh] w-5 bg-[rgba(0,0,24)] borde r border-orange -100  z-10 relatiive -translate-y-[5vh] ${rotate}`} 
         style={{
             boxShadow: 'inset 0px 0px 6px 5px rgba(225,225,225,0.01)'
         }}>
-            <div className={`absolute bg-transparent w-full h-3 border-l border-r border-blue-400 transition-all duration-[2s] bottom-0 ${condition ? 'h-full' : ''}`}></div>
+            <div className={`absolute bg-transparent w-full h-3 border-l border-r border-orange -400 transition-all duration-[2s] bottom-0 ${condition ? 'h-full' : ''}`}></div>
         </div>
 
     )

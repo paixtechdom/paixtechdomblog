@@ -41,7 +41,7 @@ const BlogCard:FC<BlogDataInterface | any> = ({blog}) => {
         <div className="card-body w-full gap-1 pt-4">
 
           <div className='flex flex-col'>
-            <h2 className="card-title text-lg capitalize font-bold mb- text-blue-600">
+            <h2 className="card-title text-lg capitalize font-bold text-orange">
             {blog?.title}
             </h2>
             <p className="text-sm m-0 text-gray-500">

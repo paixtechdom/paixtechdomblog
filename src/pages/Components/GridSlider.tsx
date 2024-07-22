@@ -22,15 +22,15 @@ return(
                                 <div className="absolute border border-blue-900 top-0  left-50 w-12 h-12 md:w-16 md:h-16 rotate-45 rounded-tl-[25px]  rounded-br-[25px]">
 
                                 </div>
-                                <i className={`bi bi-${d.icon} text-2xl md:text-4xl text-blue-400`}></i>
+                                <i className={`bi bi-${d.icon} text-2xl md:text-4xl text-orange -400`}></i>
                             </div>
 
-                            <h2 className="text-blue-600 text-xl">
+                            <h2 className="text-orange text-2xl">
                                 {d.title}
                             </h2> 
                             {
                                 d.desc &&
-                            <p className="text- md text-gray-300">
+                            <p className="text- md text-gray-100">
                                 {d.desc}
                             </p>
                             }

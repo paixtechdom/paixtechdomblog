@@ -8,8 +8,8 @@ export const Packages = () => {
             {
                 Prices.map((price, i: number) => (
                     <div key={i} className="flex flex-col w-full border border-blue-900 rounded-2xl overflow-hidden">
-                        <div className="w-full bg-gradient-to-l from-[rgba(0,0,10)] via-[rgba(0,0,24)] to-[rgba(0,0,10)] border-b border-blue-900 text-center center flex-col gap-2 text-xl text-blue-600 p-[5vh]">
-                            <div className="flex gap-4 text-blue-200">
+                        <div className="w-full bg-gradient-to-l from-[rgba(0,0,10)] via-[rgba(0,0,24)] to-[rgba(0,0,10)] border-b border-blue-900 text-center center flex-col gap-2 text-xl text-orange -600 p-[5vh]">
+                            <div className="flex gap-4 text-orange text-opacity-70">
                                 <i className={`bi bi-${price.icon}`}></i>
                                 <h3 className="">{price.title}</h3>
                             </div>
@@ -24,7 +24,7 @@ export const Packages = () => {
                                 price.features.map((feature, i) => (
                                     <div key={i} className="flex items-start gap-3">
                                         <div className="h-4 w-4 center mt-1">
-                                            <i className={`i bi-${price.icon}   text-blue-600 bg-gray-2 00 rounded-full`}></i>
+                                            <i className={`i bi-${price.icon}   text-orange -600 bg-gray-2 00 rounded-full`}></i>
                                         </div>
 
                                         <p className="w-10/12">

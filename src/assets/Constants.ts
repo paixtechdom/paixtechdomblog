@@ -318,7 +318,7 @@ const Questions = [
         id: 'queswopr',
         icon: 'patch-question-fill',
         title: 'How long does it take to build a website?',
-        desc: 'This vary depending the complexity of the project, and the responsiveness of the client in providing feedback and content. On average, a basic website can take anywhere from 5 days to 2 weeks, more complex projects may take a month or more'
+        desc: 'This vary depending the complexity of the project, and the responsiveness of the client in providing feedback and the requirements to get the job done. On average, a basic website can take anywhere from 5 days to 2 weeks, more complex projects may take a month or more'
     },
     {
         id: 'queswrrrer',

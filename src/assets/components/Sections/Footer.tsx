@@ -25,9 +25,9 @@ export const Footer = () => {
                         ContactInfo.map((contact, i) => (
                             !contact.title &&
                             <a key={i} target="_blank" href={contact.link} className="p-2 h-12 w-12 center relative">
-                                <div className="border rounded-tl-3xl rounded-br-3xl border-blue-900 absolute top-0 right-0 rotate-[45deg] w-full h-full">
+                                <div className="border rounded-tl-3xl rounded-br-3xl border-orange absolute top-0 right-0 rotate-[45deg] w-full h-full">
                                 </div>
-                                <i className={`bi bi-${contact.icon} text-xl `}></i>
+                                <i className={`bi bi-${contact.icon} text-xl text-white`}></i>
                             </a>
                         ))
                     }
@@ -48,10 +48,10 @@ export const Footer = () => {
                     }
                     
                 </div>
-                <h3 className="text-2xl text-blue-600">
+                <h3 className="text-2xl text-orange -600">
                     Paix Techdom
                 </h3>
-                <p className='tracking-wide leading-relaxed text-[15px] text-gray-300'>
+                <p className='tracking-wide leading-relaxed text-[15px] text-gray-100'>
                 We are dedicated to ensuring organizations, startups, small, medium and large size companies are equipped with the right website for their online presence and business activities
                 </p>
                 <div className="w-full">
@@ -65,13 +65,13 @@ export const Footer = () => {
             <div className={`w-full lg:w-5/12 px-3 flex flex-col items-center lg:items-end gap-6 my-8 lg:my-0 z-20`}>
 
                     <div className="w-full flex justify-center lg:justify-end gap-4 items-start">
-                        <p className="text-2xl w-fit  font-bold text-blue-600">Quick Links</p>
+                        <h3 className="text-2xl w-fit  font-bold text-orange -600">Quick Links</h3>
 
 
                     </div>
                     {
                         Navs.map((nav, i) => (
-                            <Link key={i} to={`/${nav.link}`} className={`flex w-fit justify-center lg:justify-end gap-2 items-center ${currentNav == i ? 'text-blue-600 border-b border-blue-900' : 'text-gray-300'} hover:text-blue-600 hover:border-b hover:border-blue-400`} onClick={
+                            <Link key={i} to={`/${nav.link}`} className={`flex w-fit justify-center lg:justify-end gap-2 items-center ${currentNav == i ? 'text-orange border-b border-blue-900' : 'text-gray-100'} hover:text-orange hover:border-b hover:border-blue-400`} onClick={
                                 () => setCurrentNav(i)
                             }>
                             <i className={`bi bi-${nav.icon}`}></i>
@@ -92,7 +92,7 @@ export const Footer = () => {
 
 
             <div className="p-3 py-9  flex justify-center items-center text-white text-center border-t border-blue-900 relative pt-[7vh] mt-9">
-                <p>&copy; Copyright <strong className='text-xl'> Paix Techdom </strong> {new Date().getFullYear()} </p>
+                <p>&copy; Copyright <strong className='text-xl text-orange'> Paix Techdom </strong> {new Date().getFullYear()} </p>
             </div>
      
         </footer>

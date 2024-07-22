@@ -42,7 +42,7 @@ export const Steps = () => {
     return(
         <section id='How' className="center w-full flex-col pt-[20vh] overflow-hidden">
             <Parallax id={'howheader'} className={' w-11/12 lg:w-10/12 xl:w-9/12'}>
-                <h2 className="text-2xl mb-5 font-bold tracking-wide text-blue-600">How we get it done for you</h2>
+                <h2 className="text-4xl mb-5 tracking-wide text-orange">How we get it done for you</h2>
             </Parallax>
 
             <div className="flex flex-col w-11/12 lg:w-10/12 xl:w-9/12 lg:flex-row gap-[50px] overflow-hidden mt-9">
@@ -56,7 +56,7 @@ export const Steps = () => {
                                     <Parallax id={`steps${step.title[0]}${step.title[2]}${step.title[3]}`} className={'flex gap-2'}>
                                         <>
                                             <div className={`flex flex-col items-center lg:h-full w-1/12 gap-1`}>
-                                                <p className="border border-blue-900 text-blue-300 h-8 w-8 center rounded-full">{i+1}</p>
+                                                <p className="border border-blue-900 text-orange -300 h-8 w-8 center rounded-full">{i+1}</p>
 
                                                 <div className="border-l border-dashed border-blue-900 h-4/5 w-[1px]"></div>
                                             </div>
@@ -67,10 +67,10 @@ export const Steps = () => {
                                                 i == steps.length - 2 ? 'mb-[5vh] lg:mb-[2vh]' : 
                                                 'mb-[5vh] lg:mb-[10vh] xl:mb-[12vh]'} rounded-2xl border border-blue-900 p-9`}>
 
-                                                <h3 className="text-blue-600 text-xl">
+                                                <h3 className="text-orange text-2xl">
                                                     {step.title}
                                                 </h3>
-                                                <p className='text-gray-300 tracking-wide leading-relaxed text-[15px]'>{step.desc}</p>
+                                                <p className='text-gray-100 tracking-wide leading-relaxed text-[15px]'>{step.desc}</p>
                                             </div>
                                         </>
                                     </Parallax>

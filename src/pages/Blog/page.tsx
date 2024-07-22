@@ -70,11 +70,11 @@ export default function Blog() {
 
           <section className="min-h-[60vh] lg:min-h-[80vh] center w-full gap-[50px] pt-[15vh] lg:pt-[15vh]">
             <div className="flex flex-col center gap-5 w-full text-center">
-              <h1 className="text-4xl lg:text-5xl font-bold text-blue-600 w-full lg:w-9/12">
+              <h1 className="text-4xl lg:text-5xl font-bold text-orange w-full lg:w-9/12">
                 Articles, Ideas and Inspirations for you
               </h1>
               <p className="text-gray-300 w-11/12 lg:w-8/12">
-              Discover the latest in web development, technology, and business through our articles tailored to your needs.
+              Discover the latest in web development and other related technological updates through our articles tailored to your needs.
               </p>
               {/* <p className="text-gray-300 w-11/12 lg:w-9/12">
                 Looking to stay updated with latest trends on web, tech and business hacks? <br />Get fresh updates in your inbox to get started now
@@ -98,7 +98,7 @@ export default function Blog() {
 
           <section id="search" className="lg:w-11/12 pt-[15vh] lg:pt-[5vh]">
             <div className="lg:w-full mb-[20vh] flex items-center flex-col lg:flex-row gap-3 bg-secondary p-5 rounded-2xl md:px-8 lg:justify-between min-h-[20vh]">
-              <h2 className="font-bold text-2xl text-center lg:text-left">Explore our list of blogs tailored for you</h2>
+              <h2 className="font-bold text-orange text-opacity-80 text-2xl text-center lg:text-left">Explore our list of blogs tailored for you</h2>
               <div className="items-center input flex gap-4 w-full lg:w-fit">
 
                 <BiSearch className="text-xl"/>

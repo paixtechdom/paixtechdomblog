@@ -2,7 +2,7 @@ import manoncliff from './img/manoncliff.png'
 import bulb from './img/bulb.png'
 import phone from './img/phone.png'
 import laptop from './img/laptop.png'
-import logo from "../assets/img/favicon.ico"
+
 
 
 const Navs = [
@@ -350,7 +350,7 @@ const Questions = [
 
 
 
-export { logo, Navs, Gain, numbers, ServicesInfo, ContactInfo, Prices, Testimonials, HeroContent, ValuesInfo, Questions }
+export { Navs, Gain, numbers, ServicesInfo, ContactInfo, Prices, Testimonials, HeroContent, ValuesInfo, Questions }
 
 
 

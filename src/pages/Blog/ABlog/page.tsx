@@ -1,15 +1,18 @@
 import Hero from '../../../assets/components/Hero'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import { Client } from '../../../lib/Client'
 import { useContext, useEffect, useState } from 'react'
 import { BlogDataInterface } from '../../../assets/components/BlogCard'
 import BlockContent from "@sanity/block-content-to-react"
 import styles from "./ABlog.module.css"
 import { AppContext } from '../../../App'
+import { Helmet } from "react-helmet-async"
+
 
 const ABlogPage = () => {
     const {slug} = useParams()
     const [ blog, setBlog ] = useState<BlogDataInterface | any>({})
+    const navigate = useNavigate()
 
     const { setCurrentNav } = useContext<any>(AppContext)
     useEffect(() => {
@@ -17,9 +20,9 @@ const ABlogPage = () => {
       window.scrollTo(0,0)
     }, [])
     
-    useEffect(() => {
-      document.title = `Reading | ${blog?.title}`
-    }, [blog])
+    // useEffect(() => {
+    //   document.title = `Reading | ${blog?.title}`
+    // }, [blog])
     useEffect(() => {
 
       Client.fetch(
@@ -43,6 +46,7 @@ const ABlogPage = () => {
       })
       .catch((error) => {
         console.error(error.cause)
+        navigate('/page_not_found')
       })
     }, [slug])
 
@@ -57,9 +61,9 @@ const ABlogPage = () => {
             case 'h2':
               return <h2 className="text-orange text-3xl mt-[7vh] mb-5 lg:mt-[12vh]">{props.children}</h2>;
             case 'h3':
-              return <h3 className="lg:mt-[12vh] mb-5  mt-[7vh] text-orange text-3xl">{props.children}</h3>;
+              return <h3 className="lg:mt-[8vh] mb-3  mt-[5vh] text-orange text-xl">{props.children}</h3>;
             case 'h4':
-              return <h4 className="mt-5 mb-3">{props.children}</h4>;
+              return <h4 className="mt-5 mb-3 leading-relaxed tracking-wide font-bold">{props.children}</h4>;
             case 'h5':
               return <h5 className="mt-4 mb-3">{props.children}</h5>;
             case 'h6':
@@ -73,7 +77,7 @@ const ABlogPage = () => {
                 </pre>
               );
             default:
-              return <p className={styles.paragraph + " text-gray-300 mb-3 leading-relaxed tracking-wide"}>{props.children}</p>;
+              return <p className={styles.paragraph + " text-gray-100 mb-3 leading-relaxed tracking-wide"}>{props.children}</p>;
           }
         },
         // image: (props: any) => (
@@ -92,7 +96,7 @@ const ABlogPage = () => {
       list: (props: any) => {
         const { type } = props;
         const Tag = type === 'bullet' ? 'ul' : 'ol';
-        return <Tag className={styles.list + " mt-2 mb-3 text-gray-300 leading-relaxed tracking-wide"}>{props.children}</Tag>;
+        return <Tag className={styles.list + " mt-2 mb-3 text-gray-100 leading-relaxed tracking-wide"}>{props.children}</Tag>;
       },
       listItem: (props: any) => <li className={styles.listItem}>{props.children}</li>,
       marks: {
@@ -112,6 +116,23 @@ const ABlogPage = () => {
   
   return (
     <>
+      <Helmet>
+        <title>
+            {`Reading | ${blog?.title || "Blog Post"}`}
+        </title>
+        <meta name="description" content={`${blog?.body[0].children[0].text.substring(0,100)}...`} />
+        <meta property="og:title" content={`Reading | ${blog?.title || "Blog Post"}`} />
+        <meta property="og:description" content={`${blog?.body[0].children[0].text.substring(0,100)}...`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://paixtechdom.com/blog/${slug}`} />
+        <meta property="og:image" content={blog?.mainImage?.asset?.url} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`Reading | ${blog?.title || "Blog Post"}`} />
+        <meta name="twitter:description" content={`${blog?.body[0].children[0].text.substring(0,100)}...`} />
+        <meta name="twitter:image" content={blog?.mainImage?.asset?.url} />
+    </Helmet>
+
+
     <main className="min-h-screen center flex-col bg-gradient-to-r from-secondary via-primary to-secondary pb-[10vh] relative">
     {
           blog?.title && 

@@ -1,4 +1,4 @@
-import { Gain, logo } from '../../assets/Constants'
+import { Gain } from '../../assets/Constants'
 import { useContext, useEffect } from 'react'
 import { AppContext } from '../../App'
 import { ImageAndText } from '../Components/ImageAndText'
@@ -26,7 +26,6 @@ const Home = () => {
                 <title>
                     Paix Techdom - Website Development Company
                 </title>
-                <link rel="icon" type="image/png" href={logo} />
             </Helmet>
         <main>
 

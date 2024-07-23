@@ -35,7 +35,7 @@ export const Parallax:FC<ParallaxInterface> = ({id, children, className}) => {
     }, [])
 
     return(
-        <div  id={id || "string"} className={`relative  transition-all duration-1000 ${isPosMatch ? '' : 'opacity-0 scale-[0.2] top-[3vh]'} ${className}`}>
+        <div  id={id || "string"} className={`relative  transition-all duration-1000 ${isPosMatch ? '' : 'opacity-0 scale-[0.5] top-[2vh]'} ${className}`}>
             {children}
         </div>
     )

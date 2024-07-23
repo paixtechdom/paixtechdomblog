@@ -22,7 +22,7 @@ const SomeProjects = () => {
             {
                 PortfolioItems.map((item, i) => (
                     i < 3  &&
-                    <Item item={item}/>
+                    <Item item={item} key={i}/>
                 ))
             }
         </div>        

@@ -27,6 +27,8 @@ const Services = () =>{
                 <title>
                     Our Services at Paix Techdom
                 </title>
+                <meta property="og:title" content={`Our Services Paix Techdom`} />
+                <meta name="twitter:title" content={`Our Services Paix Techdom`} />
             </Helmet>                    
             <main className="bg-blue-fade flex flex-col items-center  overflow-hidden pt-9">
                 <PagesHero 

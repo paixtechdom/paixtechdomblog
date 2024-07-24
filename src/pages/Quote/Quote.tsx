@@ -23,6 +23,8 @@ const Quote = () => {
                 <title>
                     Get a quote at Paix Techdom
                 </title>
+                <meta property="og:title" content={`Get a quote at Paix Techdom`} />
+                <meta name="twitter:title" content={`Get a quote at Paix Techdom`} />
             </Helmet>
             <main className="bg-blue-fade flex flex-col items-center  overflow-hidden pt-9">
 

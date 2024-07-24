@@ -71,6 +71,8 @@ const Portfolio = () => {
                 <title>
                     Our Works - Paix Techdom
                 </title>
+                <meta property="og:title" content={`Our Works - Paix Techdom`} />
+                <meta name="twitter:title" content={`Our Works - Paix Techdom`} />
             </Helmet>            
             <main id="Portfolio" className="flex-col overflow-hidden w-full pt-9 center">
 

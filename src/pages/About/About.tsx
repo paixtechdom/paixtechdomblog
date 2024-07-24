@@ -31,6 +31,8 @@ const About = () => {
             <title>
                 About Paix Techdom
             </title>
+            <meta property="og:title" content={`About Paix Techdom`} />
+            <meta name="twitter:title" content={`About Paix Techdom`} />
         </Helmet>
         <main className="flex flex-col overflow-hidden w-full pt-9">
 

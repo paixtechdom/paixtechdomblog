@@ -43,6 +43,7 @@ const ABlogPage = () => {
       ).then((data) => {
         if(data[0]){
           setBlog(data[0])
+                
         }else{
           navigate('/page_not_found')
         }
@@ -125,26 +126,29 @@ const ABlogPage = () => {
             {`Reading | ${blog?.title || "Blog Post"}`}
         </title>
         <link rel="icon" type="image/png" href={blog?.mainImage?.asset?.url} />
-        <meta name="description" content={`${blog?.body[0]?.children[0]?.text.substring(0,100)}...`} />
-        <meta property="og:title" content={`Reading | ${blog?.title || "Blog Post"}`} />
-        <meta property="og:description" content={`${blog?.body[0]?.children[0]?.text.substring(0,100)}...`} />
+        <meta property="og:title" content={`${blog?.title || "Blog Post"}`} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://paixtechdom.com/blog/${slug}`} />
         <meta property="og:image" content={blog?.mainImage?.asset?.url} />
+        <meta property="og:description" content={`Read article...`} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`Reading | ${blog?.title || "Blog Post"}`} />
-        <meta name="twitter:description" content={`${blog?.body[0]?.children[0]?.text.substring(0,100)}...`} />
         <meta name="twitter:image" content={blog?.mainImage?.asset?.url} />
+        <meta name="twitter:title" content={`${blog?.title || "Blog Post"}`} />
+        <meta name="description" content={`Read article...`} />
+        <meta name="twitter:description" content={`Read article...`} />
+        
     </Helmet>
 
 
-    <main className="min-h-screen center flex-col bg-gradient-to-r from-secondary via-primary to-secondary pb-[10vh] relative">
+    <main className="min-h-screen center flex-col bg-gradient-to-r from-secondary via-primary to-secondary pb-[10vh] relative ">
     {
           blog?.title && 
-          <div className="w-full lg:w-9/12 xl:w-8/12 ">
+          <div className="w-full lg:w-9/12 xl:w-8/12 min-h-[60vh]">
             <Hero blog={blog}/>
           </div>
         }
+        
+        
       <div className="w-11/12 lg:w-9/12 xl:w-7/12  min-h-screen fleex items-center flex-col ">
         {
           blog?.title && 

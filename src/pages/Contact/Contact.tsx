@@ -29,6 +29,8 @@ const Contact = () => {
                 <title>
                     Contact Paix Techdom
                 </title>
+                <meta property="og:title" content={`Contact Paix Techdom`} />
+                <meta name="twitter:title" content={`Contact Paix Techdom`} />
             </Helmet>
             <main className="section contact flex flex-col items-center mt-9  overflow-hidden" id="Contact">
             <PagesHero 

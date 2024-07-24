@@ -18,7 +18,7 @@ const PageNotFound = React.lazy(() => import('./pages/PageNotFound'))
 import { Navbar } from './assets/components/Sections/Navbar';
 import { Footer } from './assets/components/Sections/Footer';
 import { IconButton } from './assets/components/Button';
-import { Alert } from './assets/components/Alert';
+
 
 
 import  "react-lazy-load-image-component/src/effects/opacity.css"
@@ -26,6 +26,7 @@ import  "react-lazy-load-image-component/src/effects/blur.css"
 import { AppContext } from './App';
 import { Loader } from './pages/Components/Loader';
 import { HeroBg } from './assets/components/HeroBg';
+import { Alert } from './assets/components/Alert';
 
 
 
@@ -78,10 +79,9 @@ export const AppRouter = () => {
                                 behavior: 'smooth'
                             })
                         }}/>
-                        {
-                            showALert ? 
-                            <Alert alertMessage={alertMessage} alertType={alertType} setShowAlert={setShowAlert}/> : ''
-                        }
+                        
+                        <Alert alertMessage={alertMessage} alertType={alertType} setShowAlert={setShowAlert} showAlert={showALert} />
+                        
 
 
 

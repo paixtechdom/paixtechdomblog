@@ -7,6 +7,7 @@ import BlockContent from "@sanity/block-content-to-react"
 import styles from "./ABlog.module.css"
 import { AppContext } from '../../../App'
 import { Helmet } from "react-helmet-async"
+import { BiLoader } from 'react-icons/bi'
 
 
 const ABlogPage = () => {
@@ -14,7 +15,9 @@ const ABlogPage = () => {
     const [ blog, setBlog ] = useState<BlogDataInterface | any>({})
     const navigate = useNavigate()
 
-    const { setCurrentNav } = useContext<any>(AppContext)
+    const { setCurrentNav, setShowAlert, setAlertMessage, setAlertType } = useContext<any>(AppContext)
+
+
     useEffect(() => {
       setCurrentNav(4)
       window.scrollTo(0,0)
@@ -42,20 +45,26 @@ const ABlogPage = () => {
         }`
       ).then((data) => {
         if(data[0]){
-          setBlog(data[0])
-                
+          setBlog(data[0])     
         }else{
-          navigate('/page_not_found')
+          isError()
         }
         
       })
       .catch((error) => {
-        navigate('/page_not_found')
+        isError()
         console.error(error.cause)
       })
     }, [slug])
 
-
+    const isError = () => {
+      setShowAlert(true)
+          setAlertType('error')
+          setAlertMessage('Blog post does not exist. Redirecting to blog page...')
+          setTimeout(() => {
+            navigate('/blog')
+          }, 1000)
+    }
     const serializers = {
       types: {
         block: (props: any) => {
@@ -141,13 +150,18 @@ const ABlogPage = () => {
 
 
     <main className="min-h-screen center flex-col bg-gradient-to-r from-secondary via-primary to-secondary pb-[10vh] relative ">
-    {
-          blog?.title && 
-          <div className="w-full lg:w-9/12 xl:w-8/12 min-h-[60vh]">
-            <Hero blog={blog}/>
-          </div>
+      <div className="w-full lg:w-9/12 xl:w-8/12 min-h-[60vh]">
+        {
+          blog?.title ? 
+            <Hero blog={blog}/> : 
+            <div className="min-h-[80vh] center">
+              <h2 className="text-4xl text-orange animate-pulse center flex-col">
+                <BiLoader className='animate-spin' />
+                Fetching Blog Post 
+              </h2>
+            </div>
         }
-        
+        </div>
         
       <div className="w-11/12 lg:w-9/12 xl:w-7/12  min-h-screen fleex items-center flex-col ">
         {

@@ -1,32 +1,42 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import './Alert.css'
+import { BiX } from 'react-icons/bi'
 
 
 interface AlertInterface {
     alertMessage: string,
     setShowAlert: Function,
-    alertType: string
+    alertType: string,
+    showAlert: boolean
 }
 
-export const Alert:FC<AlertInterface> = ({alertMessage, setShowAlert, alertType, }) =>{
+    export const Alert:FC<AlertInterface> = ({alertMessage, setShowAlert, alertType,showAlert }) =>{
 
+    useEffect(() => {
+        if(showAlert){
+            setTimeout(() => {
+                setShowAlert(false)
+            }, 3000);
+        }
+    }, [showAlert])
 
     return(
-        <div className="alertParent " style={{
-            zIndex: 500
-        }}>
-            <div className={`rounded-2xl alert bg-[rgba(0,0,10)] w-11/12 md:w-9/12 lg:w-5/12 rounded-4 ${alertType}`}>
-                
-                <div className={`${alertType} rounded-full flex items-center justify-center text-5xl text-white w-[80px] h-[80px]`}>
-                    <i className={`bi bi-${alertType == 'success' ? 'check-lg text-green-500' : alertType == 'error' ?  'exclamation' : ''}`}></i>
-                </div>
+      
 
-                <h3 className='font-bold text-xl'>{alertType == 'success' ? 'Sent' : 'Failed'}</h3>
-                <p className='text-center'>{alertMessage}</p>
+        <div className={`fixed z-[500] transition-all duration-500 ease-in-out ${showAlert ? "bottom-[5vh] lg:bottom-[10vh]" : "-bottom-[15vh]"}  left-0 w-full center h-[10vh] lg:h-[12vh]`}>
+            <div className={`bg-primary bg-opacity-40 backdrop-blur-2xl w-11/12 md:w-9/12 lg:w-7/12 xl:w-5/12 rounded-xl flex items-center justify-between h-full shadow-xl px-3
+            border-b-[5px] lg:border-b-[10px] ${
+            alertType == "success" ? "border-green-700" : "border-red-700"
+            }
+            `}>
+            <p className="text-white lg:text-lg text-wrap">
+                {alertMessage}
+            </p>
 
-                <button className={`w-4/5 text-white rounded-full p-3  hover:scale-90 transition-all duration-1000 ${alertType}`} 
-                onClick={() => setShowAlert(false)}
-                >Close</button>
+            <BiX onClick={() => {
+                setShowAlert(false)
+            }} className="rounded-full bg-gray-200 mx-4 h-8 w-8 cursor-pointer text-zinc-700"/>
+
             </div>
         </div>
     )

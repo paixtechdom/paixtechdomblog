@@ -64,6 +64,7 @@ export default function Blog() {
             <title>
                 Blogs - Paix Techdom
             </title>
+            
         </Helmet>
       <main className="min-h-screen center pb-[15vh] relative">
           <div className="w-11/12 lg:w-10/12 xl:w-9/12 center flex-col">

@@ -60,8 +60,8 @@ export const ContactForm = () => {
             setSubject('')
         })
         .catch(() =>{
-            setShowAlert(true)
             setIsLoading(false)
+            setShowAlert(true)
             setAlertType('error')
             setAlertMessage('Error sending message')
         })

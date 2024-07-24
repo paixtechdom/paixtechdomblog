@@ -41,12 +41,16 @@ const ABlogPage = () => {
           "name": auth -> name
         }`
       ).then((data) => {
-        setBlog(data[0])
-        // console.log(data[0])
+        if(data[0]){
+          setBlog(data[0])
+        }else{
+          navigate('/page_not_found')
+        }
+        
       })
       .catch((error) => {
-        console.error(error.cause)
         navigate('/page_not_found')
+        console.error(error.cause)
       })
     }, [slug])
 
@@ -120,15 +124,16 @@ const ABlogPage = () => {
         <title>
             {`Reading | ${blog?.title || "Blog Post"}`}
         </title>
-        <meta name="description" content={`${blog?.body[0].children[0].text.substring(0,100)}...`} />
+        <link rel="icon" type="image/png" href={blog?.mainImage?.asset?.url} />
+        <meta name="description" content={`${blog?.body[0]?.children[0]?.text.substring(0,100)}...`} />
         <meta property="og:title" content={`Reading | ${blog?.title || "Blog Post"}`} />
-        <meta property="og:description" content={`${blog?.body[0].children[0].text.substring(0,100)}...`} />
+        <meta property="og:description" content={`${blog?.body[0]?.children[0]?.text.substring(0,100)}...`} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://paixtechdom.com/blog/${slug}`} />
         <meta property="og:image" content={blog?.mainImage?.asset?.url} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`Reading | ${blog?.title || "Blog Post"}`} />
-        <meta name="twitter:description" content={`${blog?.body[0].children[0].text.substring(0,100)}...`} />
+        <meta name="twitter:description" content={`${blog?.body[0]?.children[0]?.text.substring(0,100)}...`} />
         <meta name="twitter:image" content={blog?.mainImage?.asset?.url} />
     </Helmet>
 

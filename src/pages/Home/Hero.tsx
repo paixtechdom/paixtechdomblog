@@ -171,7 +171,7 @@ const SmSlider:FC<SliderInterface> = ({currentSlide, sliderRef, handleTouchStart
             
             
             
-            <div className="overflow-hidden w-[100vw] flex justify-end max-h-96 md:max-h-96 items-start rounded-3xl">
+            <div className="overflow-hidden w-[100vw] flex justify-end items-start max-h-96 md:max-h-96 rounded-3xl">
 
                 <div className={`flex flex-row-reverse transition-all duration-1000 h-fit`} style={{
                         width: HeroContent.length*100+'vw',

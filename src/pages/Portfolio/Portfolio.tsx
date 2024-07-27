@@ -32,7 +32,7 @@ export const PortfolioItems = [
     {
         title: 'Macmay Group',
         link: 'https://macmaygroup.netlify.app',
-        desc: ["We created a comprehensive multi-page website to shpwcase their diverse services in investments, agriculture, and food processing.", "The site provides detailed insights into their operations and enhances their online presence."],
+        desc: ["We created a comprehensive multi-page website to showcase their diverse services in investments, agriculture, and food processing.", "The site provides detailed insights into their operations and enhances their online presence."],
         img: macmayImg
     },
     {
@@ -71,6 +71,7 @@ const Portfolio = () => {
                 <title>
                     Our Works - Paix Techdom
                 </title>
+                <meta property="description" content={`Discover the projects we've worked on, showcasing our skills in digital marketing and software development. Each project reflects our dedication to providing effective and innovative solutions.`} />
                 <meta property="og:title" content={`Our Works - Paix Techdom`} />
                 <meta name="twitter:title" content={`Our Works - Paix Techdom`} />
             </Helmet>            

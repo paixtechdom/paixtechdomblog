@@ -31,11 +31,11 @@ export const Parallax:FC<ParallaxInterface> = ({id, children, className}) => {
 
     useEffect(() =>{
         document.addEventListener('scroll', handleScroll)
-        
+        return () => document.removeEventListener("scroll", handleScroll)
     }, [])
 
     return(
-        <div  id={id || "string"} className={`relative  transition-all duration-1000 ${isPosMatch ? '' : 'opacity-0 scale-[0.5] top-[2vh]'} ${className}`}>
+        <div  id={id || "string"} className={`relative  transition-all ease-in-out duration-1000 ${isPosMatch ? '' : 'opacity-[0] scale-[0.9] top-[5vh] bg-black'} ${className}`}>
             {children}
         </div>
     )

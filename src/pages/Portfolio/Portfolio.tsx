@@ -119,10 +119,10 @@ const APortfolio:FC<any> = ({portfolio, i}) => {
  
     return(
         // <a id={portfolio?.title.replaceAll(' ', '')} href={portfolio.link} target="_blank" className={`w-full center flex-col -reverse lg:flex-row${i%2 == 0 ? "-reverse" : ""} gap-[50px] lg:mb-0 relative overflow-hidden`} 
-        <a id={portfolio?.title.replaceAll(' ', '')} target="_blank" className={`w-full center flex-col -reverse lg:flex-row${i%2 == 0 ? "-reverse" : ""} gap-[3vh] lg:gap-[50px] lg:mb-0 relative overflow-hidden`} 
+        <div id={portfolio?.title.replaceAll(' ', '')} className={`w-full center flex-col -reverse lg:flex-row${i%2 == 0 ? "-reverse" : ""} gap-[3vh] lg:gap-[50px] lg:mb-0 relative overflow-hidden`} 
             
         >                                
-            <Parallax id={portfolio?.title.replaceAll(' ', '')} className={"lg:5/12 lg:h-[60vh] xl:h-[70vh] relative"}>
+            <Parallax id={portfolio?.title.replaceAll(' ', '')} className={"lg:5/12 min-h-[40vh] bg-secondary lg:h-[60vh] xl:h-[70vh] relative"}>
                 <>
                 <div className="absolute w-full h-full bg-transparent animate-pulse top-0 left-0"></div>
 
@@ -158,7 +158,7 @@ const APortfolio:FC<any> = ({portfolio, i}) => {
             </Parallax>
 
         
-    </a>
+    </div>
     )
 }
 

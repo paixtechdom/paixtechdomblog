@@ -156,10 +156,17 @@ const SmSlider:FC<SliderInterface> = ({currentSlide, sliderRef, handleTouchStart
                         HeroContent.map((content, i) => (
                             <div key={i} className="flex flex-col  justify-center w-[100vw] gap-4">
 
-                                <h1 className="text-5xl text-orange -600 w-[85%] leading-[50px]">{content.header}</h1>
-                                <div className="text-gray-100  tracking-wide leading-relaxed w-[90%]">{content.text}</div>
+                                <h1 className="text-4xl text-orange w-[85%] leading-[50px]">
+                                    {content.header}
+                                </h1>
+                                <div className="text-gray-100  tracking-wide leading-relaxed w-[90%]">
+                                    {content.text}
+                                </div>
                                 <Link to={"/Contact"}>
-                                <Button text={'start now'} className="w-fit" icon={'cursor-fill'}
+                                    <Button 
+                                        text={"start now"} 
+                                        className={"w-fit"} 
+                                        icon={'cursor-fill'}
                                     />
                                 </Link>
 

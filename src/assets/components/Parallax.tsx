@@ -25,8 +25,7 @@ export const Parallax:FC<ParallaxInterface> = ({id, children, className}) => {
             if(pos.top < 800){
                 setIsPosMatch(true)
             }
-        }
-      
+        } 
     }
 
     useEffect(() =>{

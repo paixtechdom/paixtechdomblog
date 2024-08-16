@@ -14,7 +14,7 @@ const PageNotFound = () => {
           
           <div className="text-6xl flex items-end">4<i className="bi bi-exclamation-circle-fill h-fit text-4xl mb-3 bg-red-700 center rounded-full"></i>4</div>
           
-          <h2 className="text-7xl text-orange">
+          <h2 className="text-5xl text-orange font-bold">
             Page not found 
           </h2>
 

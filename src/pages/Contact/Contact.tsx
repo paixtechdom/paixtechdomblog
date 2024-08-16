@@ -75,7 +75,7 @@ const Contact = () => {
                                     }
                                 </>
                             </Parallax>
-                        </div>
+                    k    </div>
                         <ContactForm />
 
                 

@@ -85,7 +85,9 @@ const XlSlider:FC<SliderInterface> = ({currentSlide}) => {
                             HeroContent.map((content, i) => (
                                 <div key={i} className="flex flex-col h-screen justify-center gap-4">
 
-                                    <h1 className="text-5xl text-orange leading-[50px]">{content.header}</h1>
+                                    <h1 className="text-4xl font-bold text-orange leading-[40px]">    
+                                        {content.header}
+                                    </h1>
                                     <div className="text-gray-100  tracking-wide leading-relaxed flex flex-col gap-3">{
                                         content.text.map((cont, i) => (
                                             <p key={i}>{cont}</p>
@@ -93,7 +95,11 @@ const XlSlider:FC<SliderInterface> = ({currentSlide}) => {
                                     
                                     }</div>
                                     <Link to={"/Contact"}>
-                                    <Button text={'Start Now'} className="w-fit" icon={'cursor-fill'}/>
+                                        <Button 
+                                            text={'Start Now'} 
+                                            className="w-fit" 
+                                            icon={'cursor-fill'}
+                                        />
                                     </Link>
 
                                 </div>

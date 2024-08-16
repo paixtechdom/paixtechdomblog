@@ -8,15 +8,32 @@ import { Button } from '../Button'
 
 
 
+
 export const Footer = () => {
-    const { currentNav, setCurrentNav } = useContext<any>(AppContext)
+    const { currentNav, setCurrentNav, setShowSubscribeForm } = useContext<any>(AppContext)
     const navigate = useNavigate()
     return(
-        <footer className='relative'>
+        <footer className='relative center flex-col w-full'>
         <Parallax id={'ljfkjbdkf'}  className="w-full border-t border-blue-900 mt-[10vh]">
         </Parallax>
-        <div className=" w-full flex justify-center">
-           <div className={`w-11/12 lg:w-10/12 xl:w-9/12 px-3 flex flex-col lg:flex-row items-start justify-between gap-9 mt-[15vh] z-20 `}>
+
+        <div className="flex flex-wrap gap-4 w-11/12 lg:w-10/12 xl:w-9/12 mt-[10vh] flex-col">
+        
+
+            <h2 className="text-orange font-bold text-xl">Stay updated</h2>
+            <p>Subscribe to our newsletter for exclusive content, updates and more</p>
+            <div className="w-fit">
+                <Button 
+                    text='Subscribe now'
+                    icon={"bell-fill"}
+                    func={() => setShowSubscribeForm(true)}
+                />
+            </div>
+        </div>
+
+
+        <div className=" w-full flex justify-center ">
+           <div className={`w-11/12 lg:w-10/12 xl:w-9/12 px-3 flex flex-col lg:flex-row items-start justify-between gap-9 z-20 mt-[10vh]`}>
             <div className="flex flex-col gap-3 w-full lg:w-6/12">
             <div className="flex items-start flex-col w-11/12 mb-[5vh] gap-4">
                 <Parallax id={'contacticons'} className="flex gap-5">
@@ -91,9 +108,9 @@ export const Footer = () => {
         </div>    
 
 
-            <div className="p-3 py-9  flex justify-center items-center text-white text-center border-t border-blue-900 relative pt-[7vh] mt-9">
-                <p>&copy; Copyright <strong className='text-xl text-orange'> Paix Techdom </strong> {new Date().getFullYear()} </p>
-            </div>
+        <div className="p-3 py-9  flex justify-center items-center text-white text-center border-t border-blue-900 relative pt-[7vh] mt-9 w-full">
+            <p>&copy; Copyright <strong className='text-xl text-orange'> Paix Techdom </strong> {new Date().getFullYear()} </p>
+        </div>
      
         </footer>
     )

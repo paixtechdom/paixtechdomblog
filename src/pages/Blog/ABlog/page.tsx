@@ -177,8 +177,7 @@ const ABlogPage = () => {
           }
 
         
-
-        <Link to="/blog" className="mt-12 btn border-blue-600">
+        <Link to="/blog" className="btn border-blue-600">
           Checkout more insightful blogs
         </Link>
 

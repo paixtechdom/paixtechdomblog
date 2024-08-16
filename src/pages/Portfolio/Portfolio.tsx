@@ -31,7 +31,7 @@ export const PortfolioItems = [
     },
     {
         title: 'Macmay Group',
-        link: 'https://macmaygroup.netlify.app',
+        link: 'https://macmaygroup.vercel.app',
         desc: ["We created a comprehensive multi-page website to showcase their diverse services in investments, agriculture, and food processing.", "The site provides detailed insights into their operations and enhances their online presence."],
         img: macmayImg
     },
@@ -43,7 +43,7 @@ export const PortfolioItems = [
     },
     {
         title: 'Albert Interiors',
-        link: 'https://albert-interiors.netlify.app',
+        link: 'https://albert-interiors.vercel.app',
         desc: ["For Albert Interiors, our landing page beautifully and elegantly highlights services and designs, offering a glimpse into their expertise in creating bespoke living spaces."],
         img: albertImg
     },

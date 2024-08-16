@@ -5,6 +5,7 @@ import { Client } from "../../lib/Client"
 import { BlogDataInterface, CardSkeleton } from "../../assets/components/BlogCard";
 import { Helmet } from "react-helmet-async"
 import { AppContext } from "../../App";
+import { Button } from "../../assets/components/Button";
 
 export default function Blog() {
   const [ fetchedBlogs, setFetchedBllogs ] = useState([])
@@ -12,7 +13,7 @@ export default function Blog() {
   const [ searchInput, setSearchInput ] = useState("")
   const blogs = fetchedBlogs?.filter((b : BlogDataInterface) => b.title.toLowerCase().includes(searchInput.toLowerCase()))
   
-  const { setCurrentNav } = useContext<any>(AppContext)
+  const { setCurrentNav, setShowSubscribeForm } = useContext<any>(AppContext)
   useEffect(() => {
     setCurrentNav(4)
     fetchBlogs()
@@ -77,22 +78,22 @@ export default function Blog() {
               <p className="text-gray-300 w-11/12 lg:w-8/12">
               Discover the latest in web development and other related technological updates through our articles tailored to your needs.
               </p>
-              {/* <p className="text-gray-300 w-11/12 lg:w-9/12">
-                Looking to stay updated with latest trends on web, tech and business hacks? <br />Get fresh updates in your inbox to get started now
-              </p> */}
-              {/* <form className="center flex-col lg:flex-row items-center gap-4"> */}
-                {/* <input type="text" placeholder="Your email" className="input"/> */}
-                <button type="submit" className="flex items-center gap-4 btn bg-transparent hover:bg-transparent hover:scale-90 transition-all duration-500 border-blue-600" onClick={() => {
+              
+              <div className="flex items-center gap-4">
+                <Button 
+                    text='Subscribe now'
+                    icon={"bell-fill"}
+                    func={() => setShowSubscribeForm(true)}
+                />
+                <button type="submit" className="flex items-center gap-4 btn bg-secondary text-gray-5200 hover:bg-transparent hover:scale-90 transition-all duration-500" onClick={() => {
                   document.querySelector("#search")?.scrollIntoView({
                     behavior: "smooth"
                   })
                 }}>
-                    Get Inspired Today
-                  {/* <span className="">
-                  </span> */}
+                    VIEW BLOGS
                 </button>
+              </div>
 
-              {/* </form> */}
             </div>
 
           </section>

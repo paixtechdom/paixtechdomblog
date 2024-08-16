@@ -27,6 +27,7 @@ import { AppContext } from './App';
 import { Loader } from './pages/Components/Loader';
 import { HeroBg } from './assets/components/HeroBg';
 import { Alert } from './assets/components/Alert';
+import { Subscribe } from './assets/components/Subscribe';
 
 
 
@@ -35,6 +36,7 @@ export const AppRouter = () => {
     const [ currentNav, setCurrentNav ] = useState(0)  
     const [ showNavBar, setShowNavBar ] = useState(false)
     const [ showALert, setShowAlert ] = useState(false)
+    const [ showSubscribeForm, setShowSubscribeForm ] = useState(false)
     const [ alertMessage, setAlertMessage ] = useState('')
     const [ alertType, setAlertType ] = useState('')
     const [ subject, setSubject ] = useState('')
@@ -66,7 +68,7 @@ export const AppRouter = () => {
 
     return (
         <HelmetProvider>
-            <AppContext.Provider value={{currentNav, setCurrentNav, showALert, setShowAlert, alertMessage, setAlertMessage, setAlertType, subject, setSubject, showNavBar, setShowNavBar, isScrollTopZero, setIsScrollTopZero, dbLocation}}>
+            <AppContext.Provider value={{currentNav, setCurrentNav, showALert, setShowAlert, alertMessage, setAlertMessage, setAlertType, subject, setSubject, showNavBar, setShowNavBar, isScrollTopZero, setIsScrollTopZero, dbLocation, showSubscribeForm, setShowSubscribeForm}}>
 
                 <Router>
                     <Suspense fallback={<Loader />}>
@@ -82,7 +84,9 @@ export const AppRouter = () => {
                         
                         <Alert alertMessage={alertMessage} alertType={alertType} setShowAlert={setShowAlert} showAlert={showALert} />
                         
-
+                        {
+                          showSubscribeForm && <Subscribe />
+                        }
 
 
                         <Routes>

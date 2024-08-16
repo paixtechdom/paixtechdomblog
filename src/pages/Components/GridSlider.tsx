@@ -46,39 +46,51 @@ return(
     )
 }
 
-interface ParallaxInterface{
-    id?: string, 
-    children?: JSX.Element,
-    className?: string,
-    index: number
+interface ParallaxInterface {
+  id?: string;
+  children?: JSX.Element;
+  className?: string;
+  index: number;
 }
 
-const Parallax:FC<ParallaxInterface> = ({id, children, className, index}) => {
-    const [ isPosMatch, setIsPosMatch ] = useState(false)
+const Parallax: FC<ParallaxInterface> = ({ id, children, className, index }) => {
+  const [isPosMatch, setIsPosMatch] = useState(false);
 
-    const handleScroll = () => {
-        const element = document.querySelector(`#${id}`)
-        if(element){
-            let pos = element.getBoundingClientRect()
-            if(pos.top > -150 && pos.top < 1100){
-                setIsPosMatch(true)
-            } else{
-                setIsPosMatch(false)
-            }
-
-        }
-      
+  const handleScroll = () => {
+    const element = document.querySelector(`#${id}`);
+    if (element) {
+      const pos = element.getBoundingClientRect();
+      if (pos.top > -150 && pos.top < 1100) {
+        setIsPosMatch(true);
+      } else {
+        setIsPosMatch(false);
+      }
     }
+  };
 
-    useEffect(() =>{
-        document.addEventListener('scroll', handleScroll)
-    }, [])
+  useEffect(() => {
+    handleScroll(); // Check initial position
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [id]);
 
-    return(
-        <div id={id} className={`relative w-full`}>
-            <div className={`relative  transition-all duration-[1s] ${!isPosMatch ? `${index == 0 || index == 2 || index == 4 || index == 6 ?'-translate-x-[25vw] opacity-[0]' : 'translate-x-[25vw] opacity-[0]'}` : ''} ${className}`}>
-                {children}
-            </div>
-        </div>
-    )
-}
+  return (
+    <div id={id} className="relative w-full">
+      <div
+        className={`relative transition-all duration-[1s] ease-in-out ${
+          !isPosMatch
+            ? `${
+                index % 2 === 0
+                  ? '-translate-x-[25vw] opacity-0'
+                  : 'translate-x-[25vw] opacity-0'
+              }`
+            : ''
+        } ${className}`}
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
+
+export default Parallax;

@@ -15,6 +15,7 @@ export default {
         "secondary": "rgba(0,0,10)",
         "orange": "#F29B31",
         "tertiary": "#F2210B",
+        "black": "rgba(0,0,0)",
       }
     },
   },

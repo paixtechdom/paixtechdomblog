@@ -47,6 +47,7 @@ export const PagesHero:FC<PagesHeroInterface> = ({image, header, text, scrollTo,
                         placeholderSrc={header + " Image" } 
                         className="h-fit w-full z-0 top-0 right-0 rounded-3xl scale-90 -translate-x-[10px] -translate-y-[10px]"
                         effect="blur"
+                        threshold={100}
                     />
                 </div>
             </section>    

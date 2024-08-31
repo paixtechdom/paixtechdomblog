@@ -122,15 +122,16 @@ const APortfolio:FC<any> = ({portfolio, i}) => {
         <div id={portfolio?.title.replaceAll(' ', '')} className={`w-full center flex-col -reverse lg:flex-row${i%2 == 0 ? "-reverse" : ""} gap-[3vh] lg:gap-[50px] lg:mb-0 relative overflow-hidden`} 
             
         >                                
-            <Parallax id={portfolio?.title.replaceAll(' ', '')} className={"lg:5/12 min-h-[40vh] bg-secondary lg:h-[60vh] xl:h-[70vh] relative"}>
+            <Parallax id={portfolio?.title.replaceAll(' ', '')} className={"lg:w-6/12 min-h-[40vh] relative min-w-[250px] md:min-w-[400px]"}>
                 <>
-                <div className="absolute w-full h-full bg-transparent animate-pulse top-0 left-0"></div>
+                <div className="absolute w-full max-h-[30vh] bg-black bg-opacity-80 animate-pulse top-0 left-0"></div>
 
                 <LazyLoadImage 
                     src={portfolio.img} 
                     placeholderSrc={portfolio.title} 
-                    className="w-full h-full lg:object-fit"
+                    className="w-full h-full"
                     effect="blur"
+                    threshold={100}
                 />
                 </>
             </Parallax>

@@ -126,6 +126,7 @@ const XlSlider:FC<SliderInterface> = ({currentSlide}) => {
                                         placeholderSrc={'Image for ' + content.header} 
                                         effect='blur'    
                                         className="w-full h-fit rounded-3xl"
+                                        threshold={100}
                                     />
                                 </div>
                             ))

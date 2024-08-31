@@ -65,6 +65,7 @@ export const ImageAndText:FC<ImageTextInterface> = ({id, title, desc, img, class
                             placeholderSrc={'Image to describe ' + title} 
                             className={` w-fit h-full rounded-3xl scale-90 ${className ? 'translate-x-[10px]' : '-translate-x-[10px]'}  -translate-y-[10px]`}
                             effect='blur'
+                            threshold={100}
                         />
                     </>
                 </Parallax>

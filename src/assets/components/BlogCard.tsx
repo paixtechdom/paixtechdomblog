@@ -35,6 +35,7 @@ const BlogCard:FC<BlogDataInterface | any> = ({blog}) => {
             width={100+"%"}
             className='m-0 md:h-[30vh] md:object-cover relative'
             effect="blur"
+            threshold={100}
            />
         </figure>
 

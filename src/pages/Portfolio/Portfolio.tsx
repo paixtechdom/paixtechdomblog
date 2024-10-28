@@ -6,7 +6,7 @@ import { BreadCrumbs } from "../Components/BreadCrumbs"
 import { Helmet } from "react-helmet-async"
 import albertImg from "../../assets/img/portfolioImgs/albert-interiors.png"
 import classImg from "../../assets/img/portfolioImgs/classImg.png"
-// import livingImg from "../../assets/img/portfolioImgs/livingWaters.png"
+import livingImg from "../../assets/img/portfolioImgs/livingWaters.png"
 import macmayImg from "../../assets/img/portfolioImgs/macmayImg.png"
 import saculietImg from "../../assets/img/portfolioImgs/saculietImg.png"
 import onidson from "../../assets/img/portfolioImgs/onidsonImg.png"
@@ -18,6 +18,12 @@ import { BsLink45Deg } from "react-icons/bs"
 
 export const PortfolioItems = [
     {
+        title: 'Living Waters Fellowship',
+        desc: ["Developed a comprehensive website for a religious organization, featuring sections that detail their mission, vision, and core values, along with a gallery showcasing key images.", "The site includes a dedicated page for downloading audio messages and offers a French translation functionality, enhancing accessibility for French-speaking users."],
+        link: 'https://livingwatersglobalministry.org',
+        img: livingImg
+    },
+    {
         title: 'Onidson Travels and Logistics Ltd',
         desc: ["Designed a user-friendly website with multiple pages dedicated to their services, aviation courses they offer and a detailed contact section", "Our work ensured a strong online presence and improved accessibility for their clients"],
         link: 'https://onidsontravels.com',
@@ -26,7 +32,7 @@ export const PortfolioItems = [
     {
         title: 'Saculiet Enterprises Nigeria',
         link: 'https://saculietdrivingschool.com',
-        desc: ["For the Driving school arm of the company, we developed a website showcasing their service and expertise in the sector, featrueing a certificate verification portal for organizations, and a gallery for photos and vidoes."],
+        desc: ["For the Driving school arm of the company, we developed a website showcasing their service and expertise in the sector, featureing a certificate verification portal for organizations, and a gallery for photos and vidoes."],
         img: saculietImg
     },
     {
@@ -47,11 +53,6 @@ export const PortfolioItems = [
         desc: ["For Albert Interiors, our landing page beautifully and elegantly highlights services and designs, offering a glimpse into their expertise in creating bespoke living spaces."],
         img: albertImg
     },
-    // {
-    //     title: 'Living Waters Fellowship',
-    //     link: 'https://livingwatersglobal.netlify.app',
-    //     img: livingImg
-    // },
 ]
 
 

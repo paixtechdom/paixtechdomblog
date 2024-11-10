@@ -10,6 +10,7 @@ import livingImg from "../../assets/img/portfolioImgs/livingWaters.png"
 import macmayImg from "../../assets/img/portfolioImgs/macmayImg.png"
 import saculietImg from "../../assets/img/portfolioImgs/saculietImg.png"
 import onidson from "../../assets/img/portfolioImgs/onidsonImg.png"
+import donatex from "../../assets/img/portfolioImgs/donatex.png"
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { PagesHero } from "../Components/PagesHero"
 import img from "../../assets/img/portfolio.jpg"
@@ -19,38 +20,51 @@ import { BsLink45Deg } from "react-icons/bs"
 export const PortfolioItems = [
     {
         title: 'Living Waters Fellowship',
-        desc: ["Developed a comprehensive website for a religious organization, featuring sections that detail their mission, vision, and core values, along with a gallery showcasing key images.", "The site includes a dedicated page for downloading audio messages and offers a French translation functionality, enhancing accessibility for French-speaking users."],
+        desc: ["Developed with a responsive design, the website features key sections; Home, Who We Are, and Media. The media section houses downloadable audio messages and images.", "For French Speaking user, a language toggle was added to seamlessly switch between French and English, hereby, increasing the ministry's reach."],
         link: 'https://livingwatersglobalministry.org',
+        tools: ['React', 'Tailwindcss', 'PHP'],
         img: livingImg
+    },
+    {
+        title: 'Donatex Diagnostics and Global Services',
+        desc: ["The project aimed to create a user-friendly, informative and visually appealing online presence for Donatex Diagnostics and Global Services.", "The website highlighted  the agency's extensive range of services, expertise and commitment to delivering high-quality patient care", "Key features include a responsive design, clear navigation, prominent display of services and expertise, call-to-actions for easy inquiry and appointment scheduling and google map for easy navigation to the agency's physical location."],
+        link: 'https://donatexdiagnostics.com.org',
+        tools: ['React', 'Tailwindcss'],
+        img: donatex
     },
     {
         title: 'Onidson Travels and Logistics Ltd',
         desc: ["Designed a user-friendly website with multiple pages dedicated to their services, aviation courses they offer and a detailed contact section", "Our work ensured a strong online presence and improved accessibility for their clients"],
         link: 'https://onidsontravels.com',
+        tools: ['React', 'Tailwindcss'],
         img: onidson
     },
     {
         title: 'Saculiet Enterprises Nigeria',
         link: 'https://saculietdrivingschool.com',
-        desc: ["For the Driving school arm of the company, we developed a website showcasing their service and expertise in the sector, featureing a certificate verification portal for organizations, and a gallery for photos and vidoes."],
+        desc: ["For the Driving school arm of the company, we developed a website highlighting their service and expertise in the sector, featuring a certificate verification portal for organizations, and a gallery for photos and videos."],
+        tools: ['React', 'Tailwindcss', "PHP"],
         img: saculietImg
     },
     {
         title: 'Macmay Group',
         link: 'https://macmaygroup.vercel.app',
-        desc: ["We created a comprehensive multi-page website to showcase their diverse services in investments, agriculture, and food processing.", "The site provides detailed insights into their operations and enhances their online presence."],
+        desc: ["We created a comprehensive multi-page website to highlight their diverse services in investments, agriculture, and food processing.", "The site provides detailed insights into their operations and enhances their online presence."],
+        tools: ['React', 'Tailwindcss'],
         img: macmayImg
     },
     {
         title: 'Christ Liberty Assembly',
         desc: ["Developed a professional church website featuring a landing page, gallery, page for sermons and articles."],
         link: 'https://christlibertyassembly.org.ng',
+        tools: ['React', 'Tailwindcss', "PHP"],
         img: classImg
     },
     {
         title: 'Albert Interiors',
         link: 'https://albert-interiors.vercel.app',
         desc: ["For Albert Interiors, our landing page beautifully and elegantly highlights services and designs, offering a glimpse into their expertise in creating bespoke living spaces."],
+        tools: ['React', 'Tailwindcss'],
         img: albertImg
     },
 ]

@@ -28,7 +28,7 @@ export const PortfolioItems = [
     {
         title: 'Donatex Diagnostics and Global Services',
         desc: ["The project aimed to create a user-friendly, informative and visually appealing online presence for Donatex Diagnostics and Global Services.", "The website highlighted  the agency's extensive range of services, expertise and commitment to delivering high-quality patient care", "Key features include a responsive design, clear navigation, prominent display of services and expertise, call-to-actions for easy inquiry and appointment scheduling and google map for easy navigation to the agency's physical location."],
-        link: 'https://donatexdiagnostics.com.org',
+        link: 'https://donatexdiagnostics.com.ng',
         tools: ['React', 'Tailwindcss'],
         img: donatex
     },

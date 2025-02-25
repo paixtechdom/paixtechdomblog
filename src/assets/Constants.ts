@@ -281,7 +281,7 @@ const Prices = [
             'Standard free Security measures',
             '1 year free maintenance'
         ],
-        price: 300,
+        price: 200,
         // price: 550,
     },
     {
@@ -296,7 +296,7 @@ const Prices = [
             'Priority support and maintenance'
         ],
         // price: 1200,
-        price: 850,
+        price: 600,
     },
     {
         title: 'Premium Plan',
@@ -308,7 +308,7 @@ const Prices = [
             'Custom web applications or features',
             'Enhanced security measures',
             ],
-        price: 1400,
+        price: 1200,
         // price: 2500,
     },
 ]

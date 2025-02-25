@@ -81,8 +81,8 @@ const Parallax: FC<ParallaxInterface> = ({ id, children, className, index }) => 
           !isPosMatch
             ? `${
                 index % 2 === 0
-                  ? '-translate-x-[25vw] opacity-0'
-                  : 'translate-x-[25vw] opacity-0'
+                  ? '-translate-x-[10vw] opacity-0'
+                  : 'translate-x-[10vw] opacity-0'
               }`
             : ''
         } ${className}`}

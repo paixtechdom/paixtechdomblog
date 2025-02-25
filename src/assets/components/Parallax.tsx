@@ -14,7 +14,7 @@ export const Parallax: FC<ParallaxInterface> = ({ id, children, className }) => 
       const element = document.querySelector(`#${id}`);
       if (element) {
         let pos = element.getBoundingClientRect();
-        if (pos.top < 800) {
+        if (pos.top < 700) {
           setIsPosMatch(true);
         } else {
           setIsPosMatch(false);
@@ -31,7 +31,7 @@ export const Parallax: FC<ParallaxInterface> = ({ id, children, className }) => 
     <div
       id={id || "string"}
       className={`relative transition-all duration-500 ease-in-out ${
-        isPosMatch ? 'opacity-100 scale-100 translate-y-0 bg-transparent' : 'opacity-0 scale-90 translate-y-5 bg-black'
+        isPosMatch ? 'opacity-100 scale-100 translate-y-0 bg-transparent' : 'opacity-0 scale-90 translate-y-1 bg-black'
       } ${className}`}
     >
       {children}

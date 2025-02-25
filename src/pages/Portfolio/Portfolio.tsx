@@ -5,8 +5,8 @@ import { FAQ } from "../Components/FAQ"
 import { BreadCrumbs } from "../Components/BreadCrumbs"
 import { Helmet } from "react-helmet-async"
 import albertImg from "../../assets/img/portfolioImgs/albert-interiors.png"
-import classImg from "../../assets/img/portfolioImgs/classImg.png"
 import livingImg from "../../assets/img/portfolioImgs/livingWaters.png"
+import bsicadvertisement from "../../assets/img/portfolioImgs/bsicadvertisement.png"
 import macmayImg from "../../assets/img/portfolioImgs/macmayImg.png"
 import saculietImg from "../../assets/img/portfolioImgs/saculietImg.png"
 import onidson from "../../assets/img/portfolioImgs/onidsonImg.png"
@@ -18,6 +18,13 @@ import { Parallax } from "../../assets/components/Parallax"
 import { BsLink45Deg } from "react-icons/bs"
 
 export const PortfolioItems = [
+    {
+        title: 'BSIC Advertisement',
+        desc: [""],
+        link: 'https://bsicadvertisement.com',
+        tools: ["Wordpress", "PHP"],
+        img: bsicadvertisement
+    },
     {
         title: 'Living Waters Fellowship',
         desc: ["Developed with a responsive design, the website features key sections; Home, Who We Are, and Media. The media section houses downloadable audio messages and images.", "For French Speaking user, a language toggle was added to seamlessly switch between French and English, hereby, increasing the ministry's reach."],
@@ -52,13 +59,6 @@ export const PortfolioItems = [
         desc: ["We created a comprehensive multi-page website to highlight their diverse services in investments, agriculture, and food processing.", "The site provides detailed insights into their operations and enhances their online presence."],
         tools: ['React', 'Tailwindcss'],
         img: macmayImg
-    },
-    {
-        title: 'Christ Liberty Assembly',
-        desc: ["Developed a professional church website featuring a landing page, gallery, page for sermons and articles."],
-        link: 'https://christlibertyassembly.org.ng',
-        tools: ['React', 'Tailwindcss', "PHP"],
-        img: classImg
     },
     {
         title: 'Albert Interiors',
@@ -137,7 +137,7 @@ const APortfolio:FC<any> = ({portfolio, i}) => {
         <div id={portfolio?.title.replaceAll(' ', '')} className={`w-full center flex-col -reverse lg:flex-row${i%2 == 0 ? "-reverse" : ""} gap-[3vh] lg:gap-[50px] lg:mb-0 relative overflow-hidden`} 
             
         >                                
-            <Parallax id={portfolio?.title.replaceAll(' ', '')} className={"lg:w-6/12 min-h-[40vh] relative min-w-[250px] md:min-w-[400px]"}>
+            <div id={portfolio?.title.replaceAll(' ', '')} className={"lg:w-6/12 min-h-[40vh] relative min-w-[250px] md:min-w-[400px]"}>
                 <>
                 <div className="absolute w-full max-h-[30vh] bg-black bg-opacity-80 animate-pulse top-0 left-0"></div>
 
@@ -149,7 +149,7 @@ const APortfolio:FC<any> = ({portfolio, i}) => {
                     threshold={100}
                 />
                 </>
-            </Parallax>
+            </div>
 
             <Parallax id={portfolio?.title.replaceAll(' ', '')+'desc'} className="relative flex flex-col w-full gap-5">
                 <>

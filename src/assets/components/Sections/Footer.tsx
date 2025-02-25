@@ -10,14 +10,14 @@ import { Button } from '../Button'
 
 
 export const Footer = () => {
-    const { currentNav, setCurrentNav, setShowSubscribeForm } = useContext<any>(AppContext)
+    const { currentNav, setCurrentNav } = useContext<any>(AppContext)
     const navigate = useNavigate()
     return(
         <footer className='relative center flex-col w-full'>
         <Parallax id={'ljfkjbdkf'}  className="w-full border-t border-blue-900 mt-[10vh]">
         </Parallax>
 
-        <div className="flex flex-wrap gap-4 w-11/12 lg:w-10/12 xl:w-9/12 mt-[10vh] flex-col">
+        {/* <div className="flex flex-wrap gap-4 w-11/12 lg:w-10/12 xl:w-9/12 mt-[10vh] flex-col">
         
 
             <h2 className="text-orange font-bold text-xl">Stay updated</h2>
@@ -29,7 +29,7 @@ export const Footer = () => {
                     func={() => setShowSubscribeForm(true)}
                 />
             </div>
-        </div>
+        </div> */}
 
 
         <div className=" w-full flex justify-center ">

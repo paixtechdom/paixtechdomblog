@@ -20,7 +20,8 @@ import { BsLink45Deg } from "react-icons/bs"
 export const PortfolioItems = [
     {
         title: 'BSIC Advertisement',
-        desc: [""],
+        desc: ["Designed and developed a sleek, high-performance website for BSIC Advertising, a brand solutions agency for influencer marketing. Built with WordPress, the site ensures seamless navigation, fast loading speeds, and an engaging user experience.", 
+        "It features additional pages, including Services, About, Creators (showcasing influencers), Blog, and a Booking page linked externally for streamlined appointment scheduling."],
         link: 'https://bsicadvertisement.com',
         tools: ["Wordpress", "PHP"],
         img: bsicadvertisement

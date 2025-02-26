@@ -4,8 +4,8 @@ import React, {Suspense, useEffect, useState } from 'react';
 import { HelmetProvider  } from 'react-helmet-async';
 
 
-import ABlogPage from './pages/Blog/ABlog/page';
-import Blog from './pages/Blog/page';
+// import ABlogPage from './pages/Blog/ABlog/page';
+// import Blog from './pages/Blog/page';
 
 const Home = React.lazy(() => import('./pages/Home/Home'))
 const About = React.lazy(() => import('./pages/About/About'))
@@ -96,8 +96,8 @@ export const AppRouter = () => {
                             <Route path="/works" element={<Portfolio />}/>
                             <Route path="/Quote" element={<Quote />}/>
                             <Route path="/contact" element={<Contact />}/>
-                            <Route path="/blog" element={<Blog />}/>
-                            <Route path="/blog/:slug" element={<ABlogPage />}/>
+                            {/* <Route path="/blog" element={<Blog />}/> */}
+                            {/* <Route path="/blog/:slug" element={<ABlogPage />}/> */}
 
                             <Route path="*" element={<PageNotFound />} />
                         </Routes>

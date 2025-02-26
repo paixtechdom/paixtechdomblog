@@ -27,11 +27,11 @@ const Navs = [
         icon:'journal-code',
         link:'works',
     },
-    {
-        name:'Blog',
-        icon: 'file-earmark-richtext',
-        link:'Blog',
-    },
+    // {
+    //     name:'Blog',
+    //     icon: 'file-earmark-richtext',
+    //     link:'Blog',
+    // },
     {
         name:'Get a Quote',
         icon:'tags-fill',
